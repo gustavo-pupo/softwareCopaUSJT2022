@@ -486,6 +486,44 @@ public class TelaGrupos extends javax.swing.JFrame {
 
     private void gruposOficiaisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gruposOficiaisButtonActionPerformed
         // TODO add your handling code here:
+        DAO dao = new DAO();
+        try{
+            Time[] times = dao.getTimesOficiais();
+            time1Grupo1TextField.setText(times[0].getNome());
+            time2Grupo1TextField.setText(times[1].getNome());
+            time3Grupo1TextField.setText(times[2].getNome());
+            time4Grupo1TextField.setText(times[3].getNome());
+            time1Grupo2TextField.setText(times[4].getNome());
+            time2Grupo2TextField.setText(times[5].getNome());
+            time3Grupo2TextField.setText(times[6].getNome());
+            time4Grupo2TextField.setText(times[7].getNome());
+            time1Grupo3TextField.setText(times[8].getNome());
+            time2Grupo3TextField.setText(times[9].getNome());
+            time3Grupo3TextField.setText(times[10].getNome());
+            time4Grupo3TextField.setText(times[11].getNome());
+            time1Grupo4TextField.setText(times[12].getNome());
+            time2Grupo4TextField.setText(times[13].getNome());
+            time3Grupo4TextField.setText(times[14].getNome());
+            time4Grupo4TextField.setText(times[15].getNome());
+            time1Grupo5TextField.setText(times[16].getNome());
+            time2Grupo5TextField.setText(times[17].getNome());
+            time3Grupo5TextField.setText(times[18].getNome());
+            time4Grupo5TextField.setText(times[19].getNome());
+            time1Grupo6TextField.setText(times[20].getNome());
+            time2Grupo6TextField.setText(times[21].getNome());
+            time3Grupo6TextField.setText(times[22].getNome());
+            time4Grupo6TextField.setText(times[23].getNome());
+            time1Grupo7TextField.setText(times[24].getNome());
+            time2Grupo7TextField.setText(times[25].getNome());
+            time3Grupo7TextField.setText(times[26].getNome());
+            time4Grupo7TextField.setText(times[27].getNome());
+            time1Grupo8TextField.setText(times[28].getNome());
+            time2Grupo8TextField.setText(times[29].getNome());
+            time3Grupo8TextField.setText(times[30].getNome());
+            time4Grupo8TextField.setText(times[31].getNome());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_gruposOficiaisButtonActionPerformed
 
     private void time1Grupo1TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_time1Grupo1TextFieldActionPerformed

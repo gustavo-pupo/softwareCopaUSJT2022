@@ -40,5 +40,25 @@ public class DAO {
             ps.execute();
         }
     }
+    public Time[] getTimesOficiais() throws Exception {
+        String sql = "SELECT * FROM time";
+        try (Connection conn = ConectorBD.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(
+             sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                  ResultSet.CONCUR_READ_ONLY )) {
+            ResultSet rs = ps.executeQuery();
+            int totalTimes = rs.last()? rs.getRow(): 0;
+            Time[] times = new Time[totalTimes];
+            rs.beforeFirst();
+            int cont = 0;
+            while (rs.next()) {
+                int id = rs.getInt("idTime");
+                String nome = rs.getString("nome");
+                int grupo = rs.getInt("grupo_idGrupo");
+                times[cont++] = new Time(id, nome, 0, 0, 0, grupo, 0);
+            }
+            return times;
+        }
+    }
 }
     
