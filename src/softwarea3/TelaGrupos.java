@@ -4,6 +4,12 @@
  */
 package softwarea3;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import java.util.Random;
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  *
  * @author augus
@@ -69,6 +75,7 @@ public class TelaGrupos extends javax.swing.JFrame {
         time3Grupo8TextField = new javax.swing.JTextField();
         time4Grupo8TextField = new javax.swing.JTextField();
         voltarButton = new javax.swing.JButton();
+        registrarTimesButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grupos");
@@ -417,6 +424,13 @@ public class TelaGrupos extends javax.swing.JFrame {
             }
         });
 
+        registrarTimesButton.setText("Registrar");
+        registrarTimesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarTimesButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -434,22 +448,24 @@ public class TelaGrupos extends javax.swing.JFrame {
                         .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(voltarButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(simulaGruposButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(registrarTimesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(simulaGruposButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -460,11 +476,12 @@ public class TelaGrupos extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(simulaGruposButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(simulaGruposButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registrarTimesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(voltarButton)))
-                .addGap(58, 58, 58)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -477,7 +494,7 @@ public class TelaGrupos extends javax.swing.JFrame {
                         .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -555,11 +572,284 @@ public class TelaGrupos extends javax.swing.JFrame {
 
     private void simulaGruposButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simulaGruposButtonActionPerformed
         // TODO add your handling code here:
+        DAO dao = new DAO();
+        try{
+            Time[] grupoA = dao.getTimesPorGrupo(1);
+            Time[] grupoB = dao.getTimesPorGrupo(2);
+            Time[] grupoC = dao.getTimesPorGrupo(3);
+            Time[] grupoD = dao.getTimesPorGrupo(4);
+            Time[] grupoE = dao.getTimesPorGrupo(5);
+            Time[] grupoF = dao.getTimesPorGrupo(6);
+            Time[] grupoG = dao.getTimesPorGrupo(7);
+            Time[] grupoH = dao.getTimesPorGrupo(8);
+            
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoA[i].getId(), grupoA[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoB[i].getId(), grupoB[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);                    
+                    Partida partida = new Partida(grupoC[i].getId(), grupoC[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoD[i].getId(), grupoD[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoE[i].getId(), grupoE[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoF[i].getId(), grupoF[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoG[i].getId(), grupoG[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                for (int j = i+1; j < 4; j++) {
+                    Random random = new Random();
+                    int scoreHost = random.nextInt(4);
+                    int scoreAway = random.nextInt(4);
+                    Partida partida = new Partida(grupoH[i].getId(), grupoH[j].getId(), scoreHost, scoreAway);
+                    if(scoreHost > scoreAway){
+                        dao.contaVitoriaHost(partida);
+                    }else if(scoreHost < scoreAway){
+                        dao.contaVitoriaAway(partida);
+                    }else if(scoreHost == scoreAway){
+                        dao.contaEmpate (partida);
+                    }
+                    dao.criaPartida(partida);
+                    dao.atualizaGolsHome(partida);
+                    dao.atualizaGolsAway(partida);
+                }
+            }
+            
+            grupoA = dao.getTimesPorGrupo(1);            
+            grupoB = dao.getTimesPorGrupo(2);
+            grupoC = dao.getTimesPorGrupo(3);
+            grupoD = dao.getTimesPorGrupo(4);
+            grupoE = dao.getTimesPorGrupo(5);
+            grupoF = dao.getTimesPorGrupo(6);
+            grupoG = dao.getTimesPorGrupo(7);
+            grupoH = dao.getTimesPorGrupo(8);            
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         
-        this.dispose();
-        TelaBrackets telaBrackets = new TelaBrackets();
-        telaBrackets.setVisible(true);
+        //this.dispose();
+        //TelaBrackets telaBrackets = new TelaBrackets();
+        //telaBrackets.setVisible(true);
     }//GEN-LAST:event_simulaGruposButtonActionPerformed
+
+    private void registrarTimesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarTimesButtonActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> times = new ArrayList<>();
+        times.add(time1Grupo1TextField.getText());
+        times.add(time2Grupo1TextField.getText());
+        times.add(time3Grupo1TextField.getText());
+        times.add(time4Grupo1TextField.getText());
+        times.add(time1Grupo2TextField.getText());
+        times.add(time2Grupo2TextField.getText());
+        times.add(time3Grupo2TextField.getText());
+        times.add(time4Grupo2TextField.getText());
+        times.add(time1Grupo3TextField.getText());
+        times.add(time2Grupo3TextField.getText());
+        times.add(time3Grupo3TextField.getText());
+        times.add(time4Grupo3TextField.getText());
+        times.add(time1Grupo4TextField.getText());
+        times.add(time2Grupo4TextField.getText());
+        times.add(time3Grupo4TextField.getText());
+        times.add(time4Grupo4TextField.getText());
+        times.add(time1Grupo5TextField.getText());
+        times.add(time2Grupo5TextField.getText());
+        times.add(time3Grupo5TextField.getText());
+        times.add(time4Grupo5TextField.getText());
+        times.add(time1Grupo6TextField.getText());
+        times.add(time2Grupo6TextField.getText());
+        times.add(time3Grupo6TextField.getText());
+        times.add(time4Grupo6TextField.getText());
+        times.add(time1Grupo7TextField.getText());
+        times.add(time2Grupo7TextField.getText());
+        times.add(time3Grupo7TextField.getText());
+        times.add(time4Grupo7TextField.getText());
+        times.add(time1Grupo8TextField.getText());
+        times.add(time2Grupo8TextField.getText());
+        times.add(time3Grupo8TextField.getText());
+        times.add(time4Grupo8TextField.getText());
+        DAO dao = new DAO();
+        try{
+            for (int i = 0; i < 4; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 1, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 4; i < 8; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 2, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 8; i < 12; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 3, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 12; i < 16; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 4, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 16; i < 20; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 5, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 20; i < 24; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 6, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 24; i < 28; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 7, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+            for (int i = 28; i < 32; i++) {
+                Time time = new Time(i+1, times.get(i), 0, 0, 0, 8, 0);
+                if(dao.existeTime(time)){
+                    JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
+                } else{
+                    dao.inserirTime(time);
+                }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_registrarTimesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -606,6 +896,7 @@ public class TelaGrupos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton registrarTimesButton;
     private javax.swing.JButton simulaGruposButton;
     private javax.swing.JTextField time1Grupo1TextField;
     private javax.swing.JTextField time1Grupo2TextField;
