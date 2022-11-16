@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.Random;
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  *
@@ -735,7 +734,32 @@ public class TelaGrupos extends javax.swing.JFrame {
             grupoE = dao.getTimesPorGrupo(5);
             grupoF = dao.getTimesPorGrupo(6);
             grupoG = dao.getTimesPorGrupo(7);
-            grupoH = dao.getTimesPorGrupo(8);            
+            grupoH = dao.getTimesPorGrupo(8);
+            
+            int[] pontosA = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontosA[i] = grupoA[i].getPontos();
+            }
+            int[] top2 = new int[2];
+            int aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontosA[i] > top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontosA[i];
+                } else if(pontosA[i] > top2[1] && pontosA[i] < top2[0]){
+                    top2[1] = pontosA[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            int contador = 0;
+            for (int i = 0; i < 4; i++) {
+                if(grupoA[i].getPontos() == top2[0] && contador < 2 || grupoA[i].getPontos() == top2[1] && contador < 2){
+                    dao.defineEliminatorias(grupoA[i].getId());
+                    contador++;
+                }
+            }
+            
         } catch (Exception e){
             e.printStackTrace();
         }
