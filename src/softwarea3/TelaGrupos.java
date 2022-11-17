@@ -503,7 +503,7 @@ public class TelaGrupos extends javax.swing.JFrame {
     private void gruposOficiaisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gruposOficiaisButtonActionPerformed
         // TODO add your handling code here:
         DAO dao = new DAO();
-        try{
+        try {
             Time[] times = dao.getTimesOficiais();
             time1Grupo1TextField.setText(times[0].getNome());
             time2Grupo1TextField.setText(times[1].getNome());
@@ -537,7 +537,7 @@ public class TelaGrupos extends javax.swing.JFrame {
             time2Grupo8TextField.setText(times[29].getNome());
             time3Grupo8TextField.setText(times[30].getNome());
             time4Grupo8TextField.setText(times[31].getNome());
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_gruposOficiaisButtonActionPerformed
@@ -572,7 +572,7 @@ public class TelaGrupos extends javax.swing.JFrame {
     private void simulaGruposButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simulaGruposButtonActionPerformed
         // TODO add your handling code here:
         DAO dao = new DAO();
-        try{
+        try {
             Time[] grupoA = dao.getTimesPorGrupo(1);
             Time[] grupoB = dao.getTimesPorGrupo(2);
             Time[] grupoC = dao.getTimesPorGrupo(3);
@@ -581,19 +581,19 @@ public class TelaGrupos extends javax.swing.JFrame {
             Time[] grupoF = dao.getTimesPorGrupo(6);
             Time[] grupoG = dao.getTimesPorGrupo(7);
             Time[] grupoH = dao.getTimesPorGrupo(8);
-            
+
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoA[i].getId(), grupoA[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -601,17 +601,17 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoB[i].getId(), grupoB[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -619,17 +619,17 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
-                    int scoreAway = random.nextInt(4);                    
+                    int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoC[i].getId(), grupoC[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -637,17 +637,17 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoD[i].getId(), grupoD[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -655,17 +655,17 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoE[i].getId(), grupoE[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -673,17 +673,17 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoF[i].getId(), grupoF[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -691,17 +691,17 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoG[i].getId(), grupoG[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
@@ -709,25 +709,25 @@ public class TelaGrupos extends javax.swing.JFrame {
                 }
             }
             for (int i = 0; i < 6; i++) {
-                for (int j = i+1; j < 4; j++) {
+                for (int j = i + 1; j < 4; j++) {
                     Random random = new Random();
                     int scoreHost = random.nextInt(4);
                     int scoreAway = random.nextInt(4);
                     Partida partida = new Partida(grupoH[i].getId(), grupoH[j].getId(), scoreHost, scoreAway);
-                    if(scoreHost > scoreAway){
+                    if (scoreHost > scoreAway) {
                         dao.contaVitoriaHost(partida);
-                    }else if(scoreHost < scoreAway){
+                    } else if (scoreHost < scoreAway) {
                         dao.contaVitoriaAway(partida);
-                    }else if(scoreHost == scoreAway){
-                        dao.contaEmpate (partida);
+                    } else if (scoreHost == scoreAway) {
+                        dao.contaEmpate(partida);
                     }
                     dao.criaPartida(partida);
                     dao.atualizaGolsHome(partida);
                     dao.atualizaGolsAway(partida);
                 }
             }
-            
-            grupoA = dao.getTimesPorGrupo(1);            
+
+            grupoA = dao.getTimesPorGrupo(1);
             grupoB = dao.getTimesPorGrupo(2);
             grupoC = dao.getTimesPorGrupo(3);
             grupoD = dao.getTimesPorGrupo(4);
@@ -735,35 +735,475 @@ public class TelaGrupos extends javax.swing.JFrame {
             grupoF = dao.getTimesPorGrupo(6);
             grupoG = dao.getTimesPorGrupo(7);
             grupoH = dao.getTimesPorGrupo(8);
-            
-            int[] pontosA = new int[4];
+
+            //Definição de times que passaram para as elimintórias - GRUPO A
+            int[] pontos = new int[4];
             for (int i = 0; i < 4; i++) {
-                pontosA[i] = grupoA[i].getPontos();
+                pontos[i] = grupoA[i].getPontos();
             }
             int[] top2 = new int[2];
             int aux = 0;
             for (int i = 0; i < 4; i++) {
-                if (pontosA[i] > top2[0]) {
+                if (pontos[i] >= top2[0]) {
                     aux = top2[0];
                     top2[1] = aux;
-                    top2[0] = pontosA[i];
-                } else if(pontosA[i] > top2[1] && pontosA[i] < top2[0]){
-                    top2[1] = pontosA[i];
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
                 }
             }
             System.out.println(top2[0] + " " + top2[1]);
-            int contador = 0;
+            int contador1 = 0;
+            int contador2 = 0;
             for (int i = 0; i < 4; i++) {
-                if(grupoA[i].getPontos() == top2[0] && contador < 2 || grupoA[i].getPontos() == top2[1] && contador < 2){
+                if (grupoA[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoA[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoA[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoA[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoA[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoA[i].getSaldoGols() - grupoA[i].getGolsSofridos() > grupoA[j].getSaldoGols() - grupoA[j].getGolsSofridos() && grupoA[j].getEliminatorias() == 1) {
+                            grupoA[i].setEliminatorias(1);
+                            grupoA[j].setEliminatorias(0);
+                        } else if (grupoA[i].getSaldoGols() - grupoA[i].getGolsSofridos() == grupoA[j].getSaldoGols() - grupoA[j].getGolsSofridos() && grupoA[j].getEliminatorias() == 1) {
+                            if(grupoA[i].getSaldoGols() > grupoA[j].getSaldoGols()){
+                                grupoA[i].setEliminatorias(1);
+                                grupoA[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoA[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoA[i].getSaldoGols() - grupoA[i].getGolsSofridos() > grupoA[j].getSaldoGols() - grupoA[j].getGolsSofridos() && grupoA[j].getEliminatorias() == 1) {
+                            grupoA[i].setEliminatorias(1);
+                            grupoA[j].setEliminatorias(0);
+                        } else if (grupoA[i].getSaldoGols() - grupoA[i].getGolsSofridos() == grupoA[j].getSaldoGols() - grupoA[j].getGolsSofridos() && grupoA[j].getEliminatorias() == 1){
+                            if(grupoA[i].getSaldoGols() > grupoA[j].getSaldoGols()){
+                                grupoA[i].setEliminatorias(1);
+                                grupoA[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoA[i].getEliminatorias() == 1) {
                     dao.defineEliminatorias(grupoA[i].getId());
-                    contador++;
                 }
             }
             
-        } catch (Exception e){
+            //Definição de times que passaram para as elimintórias - GRUPO B
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoB[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoB[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoB[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoB[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoB[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoB[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoB[i].getSaldoGols() - grupoB[i].getGolsSofridos() > grupoB[j].getSaldoGols() - grupoB[j].getGolsSofridos() && grupoB[j].getEliminatorias() == 1) {
+                            grupoB[i].setEliminatorias(1);
+                            grupoB[j].setEliminatorias(0);
+                        } else if (grupoB[i].getSaldoGols() - grupoB[i].getGolsSofridos() == grupoB[j].getSaldoGols() - grupoB[j].getGolsSofridos() && grupoB[j].getEliminatorias() == 1) {
+                            if(grupoB[i].getSaldoGols() > grupoB[j].getSaldoGols()){
+                                grupoB[i].setEliminatorias(1);
+                                grupoB[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoB[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoB[i].getSaldoGols() - grupoB[i].getGolsSofridos() > grupoB[j].getSaldoGols() - grupoB[j].getGolsSofridos() && grupoB[j].getEliminatorias() == 1) {
+                            grupoB[i].setEliminatorias(1);
+                            grupoB[j].setEliminatorias(0);
+                        } else if (grupoB[i].getSaldoGols() - grupoB[i].getGolsSofridos() == grupoB[j].getSaldoGols() - grupoB[j].getGolsSofridos() && grupoB[j].getEliminatorias() == 1){
+                            if(grupoB[i].getSaldoGols() > grupoB[j].getSaldoGols()){
+                                grupoB[i].setEliminatorias(1);
+                                grupoB[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoB[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoB[i].getId());
+                }
+            }
+            
+            //Definição de times que passaram para as elimintórias - GRUPO C
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoC[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoC[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoC[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoC[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoC[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoC[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoC[i].getSaldoGols() - grupoC[i].getGolsSofridos() > grupoC[j].getSaldoGols() - grupoC[j].getGolsSofridos() && grupoC[j].getEliminatorias() == 1) {
+                            grupoC[i].setEliminatorias(1);
+                            grupoC[j].setEliminatorias(0);
+                        } else if (grupoC[i].getSaldoGols() - grupoC[i].getGolsSofridos() == grupoC[j].getSaldoGols() - grupoC[j].getGolsSofridos() && grupoC[j].getEliminatorias() == 1) {
+                            if(grupoC[i].getSaldoGols() > grupoC[j].getSaldoGols()){
+                                grupoC[i].setEliminatorias(1);
+                                grupoC[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoC[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoC[i].getSaldoGols() - grupoC[i].getGolsSofridos() > grupoC[j].getSaldoGols() - grupoC[j].getGolsSofridos() && grupoC[j].getEliminatorias() == 1) {
+                            grupoC[i].setEliminatorias(1);
+                            grupoC[j].setEliminatorias(0);
+                        } else if (grupoC[i].getSaldoGols() - grupoC[i].getGolsSofridos() == grupoC[j].getSaldoGols() - grupoC[j].getGolsSofridos() && grupoC[j].getEliminatorias() == 1){
+                            if(grupoC[i].getSaldoGols() > grupoC[j].getSaldoGols()){
+                                grupoC[i].setEliminatorias(1);
+                                grupoC[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoC[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoC[i].getId());
+                }
+            }
+            
+            //Definição de times que passaram para as elimintórias - GRUPO D
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoD[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoD[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoD[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoD[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoD[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoD[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoD[i].getSaldoGols() - grupoD[i].getGolsSofridos() > grupoD[j].getSaldoGols() - grupoD[j].getGolsSofridos() && grupoD[j].getEliminatorias() == 1) {
+                            grupoD[i].setEliminatorias(1);
+                            grupoD[j].setEliminatorias(0);
+                        } else if (grupoD[i].getSaldoGols() - grupoD[i].getGolsSofridos() == grupoD[j].getSaldoGols() - grupoD[j].getGolsSofridos() && grupoD[j].getEliminatorias() == 1) {
+                            if(grupoD[i].getSaldoGols() > grupoD[j].getSaldoGols()){
+                                grupoD[i].setEliminatorias(1);
+                                grupoD[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoD[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoD[i].getSaldoGols() - grupoD[i].getGolsSofridos() > grupoD[j].getSaldoGols() - grupoD[j].getGolsSofridos() && grupoD[j].getEliminatorias() == 1) {
+                            grupoD[i].setEliminatorias(1);
+                            grupoD[j].setEliminatorias(0);
+                        } else if (grupoD[i].getSaldoGols() - grupoD[i].getGolsSofridos() == grupoD[j].getSaldoGols() - grupoD[j].getGolsSofridos() && grupoD[j].getEliminatorias() == 1){
+                            if(grupoD[i].getSaldoGols() > grupoD[j].getSaldoGols()){
+                                grupoD[i].setEliminatorias(1);
+                                grupoD[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoD[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoD[i].getId());
+                }
+            }
+            
+            //Definição de times que passaram para as elimintórias - GRUPO E
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoE[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoE[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoE[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoE[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoE[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoE[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoE[i].getSaldoGols() - grupoE[i].getGolsSofridos() > grupoE[j].getSaldoGols() - grupoE[j].getGolsSofridos() && grupoE[j].getEliminatorias() == 1) {
+                            grupoE[i].setEliminatorias(1);
+                            grupoE[j].setEliminatorias(0);
+                        } else if (grupoE[i].getSaldoGols() - grupoE[i].getGolsSofridos() == grupoE[j].getSaldoGols() - grupoE[j].getGolsSofridos() && grupoE[j].getEliminatorias() == 1) {
+                            if(grupoE[i].getSaldoGols() > grupoE[j].getSaldoGols()){
+                                grupoE[i].setEliminatorias(1);
+                                grupoE[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoE[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoE[i].getSaldoGols() - grupoE[i].getGolsSofridos() > grupoE[j].getSaldoGols() - grupoE[j].getGolsSofridos() && grupoE[j].getEliminatorias() == 1) {
+                            grupoE[i].setEliminatorias(1);
+                            grupoE[j].setEliminatorias(0);
+                        } else if (grupoE[i].getSaldoGols() - grupoE[i].getGolsSofridos() == grupoE[j].getSaldoGols() - grupoE[j].getGolsSofridos() && grupoE[j].getEliminatorias() == 1){
+                            if(grupoE[i].getSaldoGols() > grupoE[j].getSaldoGols()){
+                                grupoE[i].setEliminatorias(1);
+                                grupoE[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoE[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoE[i].getId());
+                }
+            }
+            
+            //Definição de times que passaram para as elimintórias - GRUPO F
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoF[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoF[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoF[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoF[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoF[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoF[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoF[i].getSaldoGols() - grupoF[i].getGolsSofridos() > grupoF[j].getSaldoGols() - grupoF[j].getGolsSofridos() && grupoF[j].getEliminatorias() == 1) {
+                            grupoF[i].setEliminatorias(1);
+                            grupoF[j].setEliminatorias(0);
+                        } else if (grupoF[i].getSaldoGols() - grupoF[i].getGolsSofridos() == grupoF[j].getSaldoGols() - grupoF[j].getGolsSofridos() && grupoF[j].getEliminatorias() == 1) {
+                            if(grupoF[i].getSaldoGols() > grupoF[j].getSaldoGols()){
+                                grupoF[i].setEliminatorias(1);
+                                grupoF[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoF[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoF[i].getSaldoGols() - grupoF[i].getGolsSofridos() > grupoF[j].getSaldoGols() - grupoF[j].getGolsSofridos() && grupoF[j].getEliminatorias() == 1) {
+                            grupoF[i].setEliminatorias(1);
+                            grupoF[j].setEliminatorias(0);
+                        } else if (grupoF[i].getSaldoGols() - grupoF[i].getGolsSofridos() == grupoF[j].getSaldoGols() - grupoF[j].getGolsSofridos() && grupoF[j].getEliminatorias() == 1){
+                            if(grupoF[i].getSaldoGols() > grupoF[j].getSaldoGols()){
+                                grupoF[i].setEliminatorias(1);
+                                grupoF[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoF[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoF[i].getId());
+                }
+            }
+            
+            //Definição de times que passaram para as elimintórias - GRUPO G
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoG[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoG[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoG[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoG[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoG[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoG[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoG[i].getSaldoGols() - grupoG[i].getGolsSofridos() > grupoG[j].getSaldoGols() - grupoG[j].getGolsSofridos() && grupoG[j].getEliminatorias() == 1) {
+                            grupoG[i].setEliminatorias(1);
+                            grupoG[j].setEliminatorias(0);
+                        } else if (grupoG[i].getSaldoGols() - grupoG[i].getGolsSofridos() == grupoG[j].getSaldoGols() - grupoG[j].getGolsSofridos() && grupoG[j].getEliminatorias() == 1) {
+                            if(grupoG[i].getSaldoGols() > grupoG[j].getSaldoGols()){
+                                grupoG[i].setEliminatorias(1);
+                                grupoG[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoG[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoG[i].getSaldoGols() - grupoG[i].getGolsSofridos() > grupoG[j].getSaldoGols() - grupoG[j].getGolsSofridos() && grupoG[j].getEliminatorias() == 1) {
+                            grupoG[i].setEliminatorias(1);
+                            grupoG[j].setEliminatorias(0);
+                        } else if (grupoG[i].getSaldoGols() - grupoG[i].getGolsSofridos() == grupoG[j].getSaldoGols() - grupoG[j].getGolsSofridos() && grupoG[j].getEliminatorias() == 1){
+                            if(grupoG[i].getSaldoGols() > grupoG[j].getSaldoGols()){
+                                grupoG[i].setEliminatorias(1);
+                                grupoG[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoG[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoG[i].getId());
+                }
+            }
+            
+            //Definição de times que passaram para as elimintórias - GRUPO H
+            pontos = new int[4];
+            for (int i = 0; i < 4; i++) {
+                pontos[i] = grupoH[i].getPontos();
+            }
+            top2 = new int[2];
+            aux = 0;
+            for (int i = 0; i < 4; i++) {
+                if (pontos[i] >= top2[0]) {
+                    aux = top2[0];
+                    top2[1] = aux;
+                    top2[0] = pontos[i];
+                } else if (pontos[i] > top2[1] && pontos[i] < top2[0]) {
+                    top2[1] = pontos[i];
+                }
+            }
+            System.out.println(top2[0] + " " + top2[1]);
+            contador1 = 0;
+            contador2 = 0;
+            for (int i = 0; i < 4; i++) {
+                if (grupoH[i].getPontos() == top2[0] && contador1 < 1) {
+                    grupoH[i].setEliminatorias(1);
+                    contador1++;
+                } else if (grupoH[i].getPontos() == top2[1] && contador2 < 1) {
+                    grupoH[i].setEliminatorias(1);
+                    contador2++;
+                } else if (grupoH[i].getPontos() == top2[0] && contador1 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoH[i].getSaldoGols() - grupoH[i].getGolsSofridos() > grupoH[j].getSaldoGols() - grupoH[j].getGolsSofridos() && grupoH[j].getEliminatorias() == 1) {
+                            grupoH[i].setEliminatorias(1);
+                            grupoH[j].setEliminatorias(0);
+                        } else if (grupoH[i].getSaldoGols() - grupoH[i].getGolsSofridos() == grupoH[j].getSaldoGols() - grupoH[j].getGolsSofridos() && grupoH[j].getEliminatorias() == 1) {
+                            if(grupoH[i].getSaldoGols() > grupoH[j].getSaldoGols()){
+                                grupoH[i].setEliminatorias(1);
+                                grupoH[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                } else if (grupoH[i].getPontos() == top2[1] && contador2 >= 1) {
+                    for (int j = 0; j < 4; j++) {
+                        if (grupoH[i].getSaldoGols() - grupoH[i].getGolsSofridos() > grupoH[j].getSaldoGols() - grupoH[j].getGolsSofridos() && grupoH[j].getEliminatorias() == 1) {
+                            grupoH[i].setEliminatorias(1);
+                            grupoH[j].setEliminatorias(0);
+                        } else if (grupoH[i].getSaldoGols() - grupoH[i].getGolsSofridos() == grupoH[j].getSaldoGols() - grupoH[j].getGolsSofridos() && grupoH[j].getEliminatorias() == 1){
+                            if(grupoH[i].getSaldoGols() > grupoH[j].getSaldoGols()){
+                                grupoH[i].setEliminatorias(1);
+                                grupoH[j].setEliminatorias(0);
+                            }
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                if (grupoH[i].getEliminatorias() == 1) {
+                    dao.defineEliminatorias(grupoH[i].getId());
+                }
+            }
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         //this.dispose();
         //TelaBrackets telaBrackets = new TelaBrackets();
         //telaBrackets.setVisible(true);
@@ -805,72 +1245,72 @@ public class TelaGrupos extends javax.swing.JFrame {
         times.add(time3Grupo8TextField.getText());
         times.add(time4Grupo8TextField.getText());
         DAO dao = new DAO();
-        try{
+        try {
             for (int i = 0; i < 4; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 1, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 1, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 4; i < 8; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 2, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 2, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 8; i < 12; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 3, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 3, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 12; i < 16; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 4, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 4, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 16; i < 20; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 5, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 5, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 20; i < 24; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 6, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 6, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 24; i < 28; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 7, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 7, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
             for (int i = 28; i < 32; i++) {
-                Time time = new Time(i+1, times.get(i), 0, 0, 0, 8, 0);
-                if(dao.existeTime(time)){
+                Time time = new Time(i + 1, times.get(i), 0, 0, 0, 8, 0);
+                if (dao.existeTime(time)) {
                     JOptionPane.showMessageDialog(null, "O país " + time.getNome() + " já está cadastrado");
-                } else{
+                } else {
                     dao.inserirTime(time);
                 }
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }//GEN-LAST:event_registrarTimesButtonActionPerformed
