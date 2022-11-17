@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author augus
+ * @author PUPO, PAGUE UM PAU
  */
 public class TelaGrupos extends javax.swing.JFrame {
 
@@ -20,6 +20,7 @@ public class TelaGrupos extends javax.swing.JFrame {
      */
     public TelaGrupos() {
         initComponents();
+        getTimes();
     }
 
     /**
@@ -75,6 +76,8 @@ public class TelaGrupos extends javax.swing.JFrame {
         time4Grupo8TextField = new javax.swing.JTextField();
         voltarButton = new javax.swing.JButton();
         registrarTimesButton = new javax.swing.JButton();
+        mostrarJogosButton = new javax.swing.JButton();
+        avancarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grupos");
@@ -164,7 +167,7 @@ public class TelaGrupos extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(time1Grupo2TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(time1Grupo2TextField)
                     .addComponent(time2Grupo2TextField)
                     .addComponent(time3Grupo2TextField)
                     .addComponent(time4Grupo2TextField))
@@ -206,7 +209,7 @@ public class TelaGrupos extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(time1Grupo3TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(time1Grupo3TextField)
                     .addComponent(time2Grupo3TextField)
                     .addComponent(time3Grupo3TextField)
                     .addComponent(time4Grupo3TextField))
@@ -280,7 +283,7 @@ public class TelaGrupos extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(time1Grupo4TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(time1Grupo4TextField)
                     .addComponent(time2Grupo4TextField)
                     .addComponent(time3Grupo4TextField)
                     .addComponent(time4Grupo4TextField))
@@ -430,14 +433,28 @@ public class TelaGrupos extends javax.swing.JFrame {
             }
         });
 
+        mostrarJogosButton.setText("Exibir Jogos");
+        mostrarJogosButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarJogosButtonActionPerformed(evt);
+            }
+        });
+
+        avancarButton.setText("Avançar");
+        avancarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                avancarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
                         .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -446,46 +463,50 @@ public class TelaGrupos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(voltarButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(voltarButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(registrarTimesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(simulaGruposButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(mostrarJogosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registrarTimesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(avancarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(simulaGruposButton, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(simulaGruposButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(registrarTimesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(voltarButton)))
-                .addGap(52, 52, 52)
+                    .addComponent(voltarButton)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(simulaGruposButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(registrarTimesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mostrarJogosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                    .addComponent(avancarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -493,13 +514,55 @@ public class TelaGrupos extends javax.swing.JFrame {
                         .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void getTimes(){
+        DAO dao = new DAO();
+        try{
+            Time[] times = dao.getTimes();
+            time1Grupo1TextField.setText(times[0].getNome());
+            time2Grupo1TextField.setText(times[1].getNome());
+            time3Grupo1TextField.setText(times[2].getNome());
+            time4Grupo1TextField.setText(times[3].getNome());
+            time1Grupo2TextField.setText(times[4].getNome());
+            time2Grupo2TextField.setText(times[5].getNome());
+            time3Grupo2TextField.setText(times[6].getNome());
+            time4Grupo2TextField.setText(times[7].getNome());
+            time1Grupo3TextField.setText(times[8].getNome());
+            time2Grupo3TextField.setText(times[9].getNome());
+            time3Grupo3TextField.setText(times[10].getNome());
+            time4Grupo3TextField.setText(times[11].getNome());
+            time1Grupo4TextField.setText(times[12].getNome());
+            time2Grupo4TextField.setText(times[13].getNome());
+            time3Grupo4TextField.setText(times[14].getNome());
+            time4Grupo4TextField.setText(times[15].getNome());
+            time1Grupo5TextField.setText(times[16].getNome());
+            time2Grupo5TextField.setText(times[17].getNome());
+            time3Grupo5TextField.setText(times[18].getNome());
+            time4Grupo5TextField.setText(times[19].getNome());
+            time1Grupo6TextField.setText(times[20].getNome());
+            time2Grupo6TextField.setText(times[21].getNome());
+            time3Grupo6TextField.setText(times[22].getNome());
+            time4Grupo6TextField.setText(times[23].getNome());
+            time1Grupo7TextField.setText(times[24].getNome());
+            time2Grupo7TextField.setText(times[25].getNome());
+            time3Grupo7TextField.setText(times[26].getNome());
+            time4Grupo7TextField.setText(times[27].getNome());
+            time1Grupo8TextField.setText(times[28].getNome());
+            time2Grupo8TextField.setText(times[29].getNome());
+            time3Grupo8TextField.setText(times[30].getNome());
+            time4Grupo8TextField.setText(times[31].getNome());
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Preencha os campos e depois clique no botão Registrar");
+        }
+        
+    }
+    
     private void gruposOficiaisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gruposOficiaisButtonActionPerformed
         // TODO add your handling code here:
         DAO dao = new DAO();
@@ -1245,6 +1308,18 @@ public class TelaGrupos extends javax.swing.JFrame {
         times.add(time3Grupo8TextField.getText());
         times.add(time4Grupo8TextField.getText());
         DAO dao = new DAO();
+        
+        boolean temVazio = false;
+        for (int i = 0; i < times.size(); i++) {
+            if (times.get(i).isEmpty()){
+                temVazio = true;
+            }
+        }
+        if (temVazio) {
+            JOptionPane.showMessageDialog(null, "Um dos campos está vazio");
+            temVazio = false;
+        }else{
+        
         try {
             for (int i = 0; i < 4; i++) {
                 Time time = new Time(i + 1, times.get(i), 0, 0, 0, 1, 0);
@@ -1313,7 +1388,41 @@ public class TelaGrupos extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
     }//GEN-LAST:event_registrarTimesButtonActionPerformed
+
+    private void mostrarJogosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarJogosButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+            DAO dao = new DAO();
+            Partida[] partidas = dao.getPartidas();
+            if (partidas.length == 0) {
+                JOptionPane.showMessageDialog(null, "Nenhuma Partida Realizada");
+            }else{
+                TelaJogos tj = new TelaJogos();
+                tj.setVisible(true);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_mostrarJogosButtonActionPerformed
+
+    private void avancarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avancarButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+            DAO dao = new DAO();
+            Partida[] partidas = dao.getPartidas();
+            if (partidas.length == 0) {
+                JOptionPane.showMessageDialog(null, "Realize a simulação antes de avançar para as eliminatórias");
+            }else{
+                TelaBrackets bc = new TelaBrackets();
+                bc.setVisible(true);
+                this.dispose();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_avancarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1351,6 +1460,7 @@ public class TelaGrupos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton avancarButton;
     private javax.swing.JButton gruposOficiaisButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -1360,6 +1470,7 @@ public class TelaGrupos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton mostrarJogosButton;
     private javax.swing.JButton registrarTimesButton;
     private javax.swing.JButton simulaGruposButton;
     private javax.swing.JTextField time1Grupo1TextField;

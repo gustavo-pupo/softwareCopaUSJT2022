@@ -1,6 +1,6 @@
 package softwarea3;
 
-public class Time implements Comparable<Time> {
+public class Time {
     private int id;
     private String nome;
     private int saldoGols;
@@ -18,14 +18,6 @@ public class Time implements Comparable<Time> {
         this.idGrupo = idGrupo;
         this.eliminatorias = eliminatorias;
     }
-    
-    @Override
-    public int compareTo(Time o) {
-        // usually toString should not be used,
-        // instead one of the attributes or more in a comparator chain
-        return toString().compareTo(o.toString());
-    }
-
     //@Override
     //public String toString() {
       //  return nome;

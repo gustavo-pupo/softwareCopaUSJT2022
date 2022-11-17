@@ -61,4 +61,15 @@ public class Partida {
     public void setScoreAway(int scoreAway) {
         this.scoreAway = scoreAway;
     }    
+    
+    @Override
+    public String toString(){
+        try{
+            DAO dao = new DAO();
+            return "" + dao.getTime(host) + " - " + scoreHost + " X " + scoreAway + " - " + dao.getTime(away);
+        } catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

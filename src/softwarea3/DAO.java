@@ -108,6 +108,20 @@ public class DAO {
             return times;
         }
     }
+    public String getTime(int idTime) throws Exception{
+        String sql = "SELECT nome FROM time WHERE idTime = ?";
+        try(Connection conn = ConectorBD.obtemConexao();
+            PreparedStatement ps = conn.prepareStatement(
+            sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                 ResultSet.CONCUR_READ_ONLY )){
+            ps.setInt(1, idTime);
+            ResultSet rs = ps.executeQuery();
+            rs.beforeFirst();
+            rs.next();
+            String time = rs.getString("nome");
+            return time;
+        }
+    }
     public Time[] getTimes() throws Exception {
         String sql = "SELECT * FROM time";
         try (Connection conn = ConectorBD.obtemConexao();
@@ -202,7 +216,6 @@ public class DAO {
             int cont = 0;
             while (rs.next()) {
                 int id = rs.getInt("idjogo");
-                String nome = rs.getString("nome");
                 int host = rs.getInt("host");
                 int away = rs.getInt("visitante");
                 int scoreHost = rs.getInt("scoreHost");
