@@ -146,6 +146,7 @@ public class DAO {
             return times;
         }
     }
+    
     public void criaPartida (Partida partida) throws Exception {
         String sql = "INSERT INTO jogo (idjogo, host, visitante, scoreHost, scoreVisitante) VALUES (?, ?, ?, ?, ?)";
         try (Connection c = ConectorBD.obtemConexao();
