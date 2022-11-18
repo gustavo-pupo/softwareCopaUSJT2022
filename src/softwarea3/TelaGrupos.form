@@ -55,7 +55,10 @@
                               <Component id="jPanel12" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="gruposOficiaisButton" min="-2" pref="125" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="gruposOficiaisButton" pref="125" max="32767" attributes="0"/>
+                                  <Component id="limparButton" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="mostrarJogosButton" max="32767" attributes="0"/>
@@ -91,6 +94,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="mostrarJogosButton" pref="53" max="32767" attributes="0"/>
                   <Component id="avancarButton" max="32767" attributes="0"/>
+                  <Component id="limparButton" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -743,6 +747,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="avancarButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="limparButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

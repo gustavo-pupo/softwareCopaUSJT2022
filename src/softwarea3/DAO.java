@@ -233,5 +233,23 @@ public class DAO {
             ps.execute();
         }
     }
+    public void LimparJogos(){
+        String sql = "DELETE FROM jogo";
+        try(Connection c = ConectorBD.obtemConexao();
+            PreparedStatement ps = c.prepareStatement(sql)){
+            ps.execute();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void LimparTimes(){
+        String sql = "DELETE FROM time";
+        try(Connection c = ConectorBD.obtemConexao();
+            PreparedStatement ps = c.prepareStatement(sql)){
+            ps.execute();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }
     

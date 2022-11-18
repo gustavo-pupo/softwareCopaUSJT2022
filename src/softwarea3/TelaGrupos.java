@@ -7,7 +7,7 @@ package softwarea3;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.Random;
-import java.util.Arrays;
+
 
 /**
  *
@@ -78,6 +78,7 @@ public class TelaGrupos extends javax.swing.JFrame {
         registrarTimesButton = new javax.swing.JButton();
         mostrarJogosButton = new javax.swing.JButton();
         avancarButton = new javax.swing.JButton();
+        limparButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Grupos");
@@ -447,6 +448,13 @@ public class TelaGrupos extends javax.swing.JFrame {
             }
         });
 
+        limparButton.setText("Limpar");
+        limparButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -475,7 +483,9 @@ public class TelaGrupos extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(gruposOficiaisButton, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                    .addComponent(limparButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(mostrarJogosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -500,7 +510,8 @@ public class TelaGrupos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(mostrarJogosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                    .addComponent(avancarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(avancarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(limparButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1310,15 +1321,31 @@ public class TelaGrupos extends javax.swing.JFrame {
         DAO dao = new DAO();
         
         boolean temVazio = false;
+        boolean temRepetido = false;
         for (int i = 0; i < times.size(); i++) {
             if (times.get(i).isEmpty()){
                 temVazio = true;
             }
         }
+        System.out.println(times.get(4).equals(times.get(4)));
+        for (int i = 0; i < 32; i++) {
+            int contador = 0;
+            for (int j = 0; j < 32; j++) {
+                if(times.get(i).equals(times.get(j)) && contador < 1){
+                    contador++;
+                }
+                else if (times.get(i).equals(times.get(j)) && contador >= 1) {
+                    temRepetido = true;
+                }
+            }
+        }
         if (temVazio) {
             JOptionPane.showMessageDialog(null, "Um dos campos está vazio");
             temVazio = false;
-        }else{
+        } else if (temRepetido) {
+            JOptionPane.showMessageDialog(null, "Não é possível registrar o mesmo time mais de uma vez!");
+            temRepetido = false;
+        } else {
         
         try {
             for (int i = 0; i < 4; i++) {
@@ -1424,6 +1451,48 @@ public class TelaGrupos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_avancarButtonActionPerformed
 
+    private void limparButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparButtonActionPerformed
+            time1Grupo1TextField.setText("");
+            time2Grupo1TextField.setText("");
+            time3Grupo1TextField.setText("");
+            time4Grupo1TextField.setText("");
+            time1Grupo2TextField.setText("");
+            time2Grupo2TextField.setText("");
+            time3Grupo2TextField.setText("");
+            time4Grupo2TextField.setText("");
+            time1Grupo3TextField.setText("");
+            time2Grupo3TextField.setText("");
+            time3Grupo3TextField.setText("");
+            time4Grupo3TextField.setText("");
+            time1Grupo4TextField.setText("");
+            time2Grupo4TextField.setText("");
+            time3Grupo4TextField.setText("");
+            time4Grupo4TextField.setText("");
+            time1Grupo5TextField.setText("");
+            time2Grupo5TextField.setText("");
+            time3Grupo5TextField.setText("");
+            time4Grupo5TextField.setText("");
+            time1Grupo6TextField.setText("");
+            time2Grupo6TextField.setText("");
+            time3Grupo6TextField.setText("");
+            time4Grupo6TextField.setText("");
+            time1Grupo7TextField.setText("");
+            time2Grupo7TextField.setText("");
+            time3Grupo7TextField.setText("");
+            time4Grupo7TextField.setText("");
+            time1Grupo8TextField.setText("");
+            time2Grupo8TextField.setText("");
+            time3Grupo8TextField.setText("");
+            time4Grupo8TextField.setText("");
+            DAO dao = new DAO();
+            try{
+                dao.LimparJogos();
+                dao.LimparTimes();
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+    }//GEN-LAST:event_limparButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1470,6 +1539,7 @@ public class TelaGrupos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JButton limparButton;
     private javax.swing.JButton mostrarJogosButton;
     private javax.swing.JButton registrarTimesButton;
     private javax.swing.JButton simulaGruposButton;
