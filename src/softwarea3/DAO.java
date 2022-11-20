@@ -146,6 +146,25 @@ public class DAO {
             return times;
         }
     }
+    public Time[] getTimesTable() throws Exception {
+        String sql = "SELECT nome, grupo_idGrupo FROM time";
+        try (Connection conn = ConectorBD.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(
+             sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                  ResultSet.CONCUR_READ_ONLY )){
+            ResultSet rs = ps.executeQuery();
+            int totalTimes = rs.last()? rs.getRow(): 0;
+            Time[] times = new Time[totalTimes];
+            rs.beforeFirst();
+            int cont = 0;
+            while (rs.next()) {
+                String nome = rs.getString("nome");
+                int grupo = rs.getInt("grupo_idGrupo");
+                times[cont++] = new Time(nome, grupo);
+            }
+            return times;
+        }
+    }
     
     public void criaPartida (Partida partida) throws Exception {
         String sql = "INSERT INTO jogo (idjogo, host, visitante, scoreHost, scoreVisitante) VALUES (?, ?, ?, ?, ?)";

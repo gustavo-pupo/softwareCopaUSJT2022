@@ -138,7 +138,9 @@ public class TelaLogin extends javax.swing.JFrame {
                 this.dispose();
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "Apenas admin permitido");
+                    TelaUser tu = new TelaUser();
+                    tu.setVisible(true);
+                    this.dispose();
                 }
             }
             else {

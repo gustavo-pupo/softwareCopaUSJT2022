@@ -18,10 +18,15 @@ public class Time {
         this.idGrupo = idGrupo;
         this.eliminatorias = eliminatorias;
     }
-    //@Override
-    //public String toString() {
-      //  return nome;
-    //}   
+    
+     public Time(String nome, int grupo){
+         this.nome = nome;
+         this.idGrupo = grupo;
+     }
+    @Override
+    public String toString() {
+        return nome;
+    }   
     
     public int getId() {
         return id;
