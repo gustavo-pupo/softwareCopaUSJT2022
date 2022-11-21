@@ -71,7 +71,7 @@ public class DAO {
     }
     
     public void inserirTime (Time time) throws Exception {
-        String sql = "INSERT INTO time (idTime, nome, saldoGols, golsSofridos, pontos, grupo_idGrupo, eliminatorias) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO time (idTime, nome, saldoGols, golsSofridos, pontos, grupo_idGrupo, eliminatorias, fase) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
         try (Connection c = ConectorBD.obtemConexao();
              PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setInt(1, time.getId());
@@ -166,6 +166,31 @@ public class DAO {
         }
     }
     
+    public Time[] getClassificados() throws Exception {
+        String sql = "SELECT * FROM time WHERE eliminatorias = 1";
+        try (Connection conn = ConectorBD.obtemConexao();
+             PreparedStatement ps = conn.prepareStatement(
+             sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
+                  ResultSet.CONCUR_READ_ONLY )){
+            ResultSet rs = ps.executeQuery();
+            int totalTimes = rs.last()? rs.getRow(): 0;
+            Time[] times = new Time[totalTimes];
+            rs.beforeFirst();
+            int cont = 0;
+            while (rs.next()) {
+                int id = rs.getInt("idTime");
+                String nome = rs.getString("nome");
+                int saldoGols = rs.getInt("saldoGols");
+                int golsSofridos = rs.getInt("golsSofridos");
+                int pontos = rs.getInt("pontos");
+                int grupo = rs.getInt("grupo_idGrupo");
+                int eliminatorias = rs.getInt("eliminatorias");
+                int fase = rs.getInt("fase");
+                times[cont++] = new Time(id, nome, saldoGols, golsSofridos, pontos, grupo, eliminatorias, fase);
+            }
+            return times;
+        }
+    }
     public void criaPartida (Partida partida) throws Exception {
         String sql = "INSERT INTO jogo (idjogo, host, visitante, scoreHost, scoreVisitante) VALUES (?, ?, ?, ?, ?)";
         try (Connection c = ConectorBD.obtemConexao();

@@ -8,6 +8,7 @@ public class Time {
     private int pontos;
     private int idGrupo;
     private int eliminatorias;
+    private int fase;
 
     public Time(int id, String nome, int saldoGols, int golsSofridos, int pontos, int idGrupo, int eliminatorias) {
         this.id = id;
@@ -18,8 +19,25 @@ public class Time {
         this.idGrupo = idGrupo;
         this.eliminatorias = eliminatorias;
     }
-    
-     public Time(String nome, int grupo){
+
+    public int getFase() {
+        return fase;
+    }
+
+    public void setFase(int fase) {
+        this.fase = fase;
+    }
+    public Time(int id, String nome, int saldoGols, int golsSofridos, int pontos, int idGrupo, int eliminatorias, int fase) {
+        this.id = id;
+        this.nome = nome;
+        this.saldoGols = saldoGols;
+        this.golsSofridos = golsSofridos;
+        this.pontos = pontos;
+        this.idGrupo = idGrupo;
+        this.eliminatorias = eliminatorias;
+        this.fase = fase;
+    }    
+    public Time(String nome, int grupo){
          this.nome = nome;
          this.idGrupo = grupo;
      }

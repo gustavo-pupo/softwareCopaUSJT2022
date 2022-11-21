@@ -4,6 +4,10 @@
  */
 package softwarea3;
 
+import java.util.Random;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author augus
@@ -15,6 +19,7 @@ public class TelaBrackets extends javax.swing.JFrame {
      */
     public TelaBrackets() {
         initComponents();
+        getClassificados();
     }
     
 
@@ -28,74 +33,160 @@ public class TelaBrackets extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        time1Oitavas1TextField = new javax.swing.JTextField();
+        time2Oitavas1TextField = new javax.swing.JTextField();
+        time1Oitavas2TextField = new javax.swing.JTextField();
+        time2Oitavas2TextField = new javax.swing.JTextField();
+        time1Oitavas3TextField = new javax.swing.JTextField();
+        time2Oitavas3TextField = new javax.swing.JTextField();
+        time1Oitavas4TextField = new javax.swing.JTextField();
+        time2Oitavas4TextField = new javax.swing.JTextField();
+        simularOitavas1 = new javax.swing.JButton();
+        simularOitavas2 = new javax.swing.JButton();
+        simularOitavas3 = new javax.swing.JButton();
+        simularOivavas4 = new javax.swing.JButton();
+        time1Oitava1ResultTextField = new javax.swing.JTextField();
+        time2Oitava1ResultTextField = new javax.swing.JTextField();
+        time1Oitava2ResultTextField = new javax.swing.JTextField();
+        time2Oitava2ResultTextField = new javax.swing.JTextField();
+        time1Oitava3ResultTextField = new javax.swing.JTextField();
+        time2Oitava3ResultTextField = new javax.swing.JTextField();
+        time1Oitava4ResultTextField = new javax.swing.JTextField();
+        time1Oitava4ResultTextField1 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
+        time1Oitavas5TextField = new javax.swing.JTextField();
+        time2Oitavas5TextField = new javax.swing.JTextField();
+        time1Oitavas6TextField = new javax.swing.JTextField();
+        time2Oitavas6TextField = new javax.swing.JTextField();
+        time1Oitavas7TextField = new javax.swing.JTextField();
+        time2Oitavas7TextField = new javax.swing.JTextField();
+        time2Oitavas8TextField = new javax.swing.JTextField();
+        time1Oitavas8TextField = new javax.swing.JTextField();
+        simularOivavas5 = new javax.swing.JButton();
+        simularOivavas6 = new javax.swing.JButton();
+        simularOivavas7 = new javax.swing.JButton();
+        simularOivavas8 = new javax.swing.JButton();
+        time1Oitava5ResultTextField = new javax.swing.JTextField();
+        time2Oitava5ResultTextField = new javax.swing.JTextField();
+        time1Oitava6ResultTextField = new javax.swing.JTextField();
+        time2Oitava6ResultTextField = new javax.swing.JTextField();
+        time1Oitava7ResultTextField = new javax.swing.JTextField();
+        time2Oitava7ResultTextField = new javax.swing.JTextField();
+        time1Oitava8ResultTextField = new javax.swing.JTextField();
+        time2Oitava8ResultTextField = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        time1Quartas1TextField = new javax.swing.JTextField();
+        time2Quartas1TextField = new javax.swing.JTextField();
+        time1Quartas2TextField = new javax.swing.JTextField();
+        time2Quartas2TextField = new javax.swing.JTextField();
+        simularQuartas2 = new javax.swing.JButton();
+        simularQuartas1 = new javax.swing.JButton();
+        time1Quarta1ResultTextField = new javax.swing.JTextField();
+        time2Quarta1ResultTextField = new javax.swing.JTextField();
+        time1Quarta2ResultTextField = new javax.swing.JTextField();
+        time2Quarta2ResultTextField = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jTextField21 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
+        time1Quartas3TextField = new javax.swing.JTextField();
+        time2Quartas3TextField = new javax.swing.JTextField();
+        time2Quartas4TextField = new javax.swing.JTextField();
+        time1Quartas4TextField = new javax.swing.JTextField();
+        simularQuartas3 = new javax.swing.JButton();
+        simularQuartas4 = new javax.swing.JButton();
+        time1Quarta3ResultTextField = new javax.swing.JTextField();
+        time2Quarta3ResultTextField = new javax.swing.JTextField();
+        time1Quarta4ResultTextField = new javax.swing.JTextField();
+        time2Quarta4ResultTextField = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        time1Semi1TextField = new javax.swing.JTextField();
+        time2Semi1TextField = new javax.swing.JTextField();
+        simularSemi1 = new javax.swing.JButton();
+        time1Semi1ResultTextField = new javax.swing.JTextField();
+        time2Semi1ResultTextField = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
+        time1Semi2TextField = new javax.swing.JTextField();
+        time2Semi2TextField = new javax.swing.JTextField();
+        simularSemi2 = new javax.swing.JButton();
+        time1Semi2ResultTextField = new javax.swing.JTextField();
+        time2Semi2ResultTextField = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
+        time1FinalTextField = new javax.swing.JTextField();
+        time2FinalTextField = new javax.swing.JTextField();
+        simularFinal = new javax.swing.JButton();
+        time1FinalResultTextField = new javax.swing.JTextField();
+        time2FinalResultTextField = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
+        time13LugarTextField = new javax.swing.JTextField();
+        time23LugarTextField = new javax.swing.JTextField();
+        simular3Lugar = new javax.swing.JButton();
+        time13LugarResultTextField = new javax.swing.JTextField();
+        time23LugarResultTextField = new javax.swing.JTextField();
         voltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Brackets");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1350, 600));
+        setMinimumSize(new java.awt.Dimension(1300, 600));
+        setPreferredSize(new java.awt.Dimension(1310, 600));
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("OITAVAS"));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        time1Oitavas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas2TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                time1Oitavas2TextFieldActionPerformed(evt);
             }
         });
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularOitavas1.setText("Simular");
+        simularOitavas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularOitavas1ActionPerformed(evt);
+            }
+        });
+
+        simularOitavas2.setText("Simular");
+
+        simularOitavas3.setText("Simular");
+
+        simularOivavas4.setText("Simular");
+        simularOivavas4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularOivavas4ActionPerformed(evt);
+            }
+        });
+
+        time1Oitava1ResultTextField.setText("0");
+
+        time2Oitava1ResultTextField.setText("0");
+
+        time1Oitava2ResultTextField.setText("0");
+
+        time2Oitava2ResultTextField.setText("0");
+
+        time1Oitava3ResultTextField.setText("0");
+
+        time2Oitava3ResultTextField.setText("0");
+
+        time1Oitava4ResultTextField.setText("0");
+
+        time1Oitava4ResultTextField1.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,55 +195,153 @@ public class TelaBrackets extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5)
-                    .addComponent(jTextField6)
-                    .addComponent(jTextField7)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(simularOitavas3)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(simularOitavas1)
+                                        .addGap(34, 34, 34))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(simularOitavas2)
+                                        .addGap(35, 35, 35))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(time2Oitavas4TextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(time2Oitavas3TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time2Oitavas2TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time2Oitavas1TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas2TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas3TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas4TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas1TextField, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitava1ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava1ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava2ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava2ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava3ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava3ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava4ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava4ResultTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(simularOivavas4)
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava1ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava1ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(simularOitavas1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava2ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava2ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularOitavas2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas3TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava3ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas3TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava3ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularOitavas3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas4TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava4ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas4TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava4ResultTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularOivavas4)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("OITAVAS"));
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas5TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas5TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas6TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas6TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas7TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas7TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas8TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas8TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularOivavas5.setText("Simular");
+        simularOivavas5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularOivavas5ActionPerformed(evt);
+            }
+        });
+
+        simularOivavas6.setText("Simular");
+        simularOivavas6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularOivavas6ActionPerformed(evt);
+            }
+        });
+
+        simularOivavas7.setText("Simular");
+        simularOivavas7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularOivavas7ActionPerformed(evt);
+            }
+        });
+
+        simularOivavas8.setText("Simular");
+        simularOivavas8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularOivavas8ActionPerformed(evt);
+            }
+        });
+
+        time1Oitava5ResultTextField.setText("0");
+
+        time2Oitava5ResultTextField.setText("0");
+
+        time1Oitava6ResultTextField.setText("0");
+
+        time2Oitava6ResultTextField.setText("0");
+
+        time1Oitava7ResultTextField.setText("0");
+
+        time2Oitava7ResultTextField.setText("0");
+
+        time1Oitava8ResultTextField.setText("0");
+
+        time2Oitava8ResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -161,48 +350,104 @@ public class TelaBrackets extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField25)
-                    .addComponent(jTextField26)
-                    .addComponent(jTextField27)
-                    .addComponent(jTextField28)
-                    .addComponent(jTextField29)
-                    .addComponent(jTextField30)
-                    .addComponent(jTextField31)
-                    .addComponent(jTextField32, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(time2Oitavas8TextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(time1Oitavas8TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time2Oitavas7TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas7TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time2Oitavas6TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas6TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time2Oitavas5TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitavas5TextField, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Oitava5ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava5ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava6ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava6ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava7ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava7ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Oitava8ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Oitava8ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(simularOivavas7)
+                            .addComponent(simularOivavas8)
+                            .addComponent(simularOivavas6)
+                            .addComponent(simularOivavas5))
+                        .addGap(34, 34, 34))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas5TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava5ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas5TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava5ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(simularOivavas5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas6TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava6ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas6TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava6ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularOivavas6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas7TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava7ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas7TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava7ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularOivavas7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Oitavas8TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Oitava8ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Oitavas8TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Oitava8ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularOivavas8)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("QUARTAS"));
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularQuartas2.setText("Simular");
+
+        simularQuartas1.setText("Simular");
+
+        time1Quarta1ResultTextField.setText("0");
+
+        time2Quarta1ResultTextField.setText("0");
+
+        time1Quarta2ResultTextField.setText("0");
+
+        time2Quarta2ResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -211,36 +456,76 @@ public class TelaBrackets extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField9)
-                    .addComponent(jTextField10)
-                    .addComponent(jTextField11)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 38, Short.MAX_VALUE)
+                        .addComponent(simularQuartas2)
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(time2Quartas2TextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(time2Quartas1TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Quartas1TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Quartas2TextField, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Quarta1ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Quarta1ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Quarta2ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Quarta2ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(simularQuartas1)
+                .addGap(33, 33, 33))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Quartas1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Quarta1ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Quartas1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Quarta1ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(simularQuartas1)
+                .addGap(46, 46, 46)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Quartas2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Quarta2ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Quartas2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Quarta2ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularQuartas2)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("QUARTAS"));
-        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularQuartas3.setText("Simular");
+
+        simularQuartas4.setText("Simular");
+
+        time1Quarta3ResultTextField.setText("0");
+
+        time2Quarta3ResultTextField.setText("0");
+
+        time1Quarta4ResultTextField.setText("0");
+
+        time2Quarta4ResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -249,134 +534,245 @@ public class TelaBrackets extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField21)
-                    .addComponent(jTextField22)
-                    .addComponent(jTextField23)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(simularQuartas4)
+                        .addGap(36, 36, 36))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(time1Quartas4TextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(time2Quartas3TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Quartas3TextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time2Quartas4TextField, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Quarta3ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Quarta3ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time1Quarta4ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Quarta4ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addComponent(simularQuartas3)
+                .addGap(38, 38, 38))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Quartas3TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Quarta3ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Quartas3TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Quarta3ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(simularQuartas3)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Quartas4TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Quarta4ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Quartas4TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Quarta4ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularQuartas4)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("SEMI-FINAL"));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Semi1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Semi1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularSemi1.setText("Simular");
+
+        time1Semi1ResultTextField.setText("0");
+
+        time2Semi1ResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField13)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(simularSemi1)
+                        .addGap(0, 36, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(time1Semi1TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(time2Semi1TextField))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(time1Semi1ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time2Semi1ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Semi1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Semi1ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Semi1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Semi1ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularSemi1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("SEMI-FINAL"));
-        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Semi2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Semi2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularSemi2.setText("Simular");
+
+        time1Semi2ResultTextField.setText("0");
+
+        time2Semi2ResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(simularSemi2)
+                .addGap(39, 39, 39))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(time2Semi2TextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(time1Semi2TextField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                    .addComponent(jTextField20))
+                    .addComponent(time1Semi2ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Semi2ResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1Semi2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1Semi2ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2Semi2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2Semi2ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularSemi2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("FINAL"));
-        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1FinalTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2FinalTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simularFinal.setText("Simular");
+
+        time1FinalResultTextField.setText("0");
+
+        time2FinalResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(43, Short.MAX_VALUE)
+                .addComponent(simularFinal)
+                .addGap(36, 36, 36))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(time2FinalTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(time1FinalTextField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                    .addComponent(jTextField16))
+                    .addComponent(time1FinalResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2FinalResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time1FinalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time1FinalResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time2FinalTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time2FinalResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simularFinal)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("3º LUGAR"));
+        jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jTextField17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time13LugarTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jTextField18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time23LugarTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        simular3Lugar.setText("Simular");
+
+        time13LugarResultTextField.setText("0");
+
+        time23LugarResultTextField.setText("0");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(simular3Lugar)
+                .addGap(36, 36, 36))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(time23LugarTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(time13LugarTextField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField17)
-                    .addComponent(jTextField18))
+                    .addComponent(time13LugarResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time23LugarResultTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time13LugarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time13LugarResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(time23LugarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(time23LugarResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(simular3Lugar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -411,7 +807,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(voltarButton))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,35 +817,34 @@ public class TelaBrackets extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(99, 99, 99)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(17, 17, 17)))
-                        .addContainerGap(65, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83))))
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(119, 119, 119)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void time1Oitavas2TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_time1Oitavas2TextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_time1Oitavas2TextFieldActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
         // TODO add your handling code here:
@@ -458,6 +853,64 @@ public class TelaBrackets extends javax.swing.JFrame {
         telaGrupos.setVisible(true);
     }//GEN-LAST:event_voltarButtonActionPerformed
 
+    private void simularOivavas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_simularOivavas4ActionPerformed
+
+    private void simularOivavas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_simularOivavas8ActionPerformed
+
+    private void simularOivavas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_simularOivavas7ActionPerformed
+
+    private void simularOivavas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_simularOivavas6ActionPerformed
+
+    private void simularOivavas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_simularOivavas5ActionPerformed
+
+    private void simularOitavas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas1ActionPerformed
+        simulaPartida(time1Oitavas1TextField, time1Oitava1ResultTextField, time2Oitavas1TextField, time2Oitava1ResultTextField, time1Quartas1TextField);
+    }//GEN-LAST:event_simularOitavas1ActionPerformed
+
+    public void simulaPartida(JTextField time1, JTextField result1, JTextField time2, JTextField result2, JTextField campo3){
+        Random random = new Random();
+        int score1 = random.nextInt(4);
+        int score2 = random.nextInt(4);
+        result1.setText(""+score1);
+        result2.setText(""+score2);
+        if (score1 > score2) {
+            campo3.setText(time1.getText());
+        } else if (score2 > score1){
+            campo3.setText(time2.getText());
+        } else {
+            score1 = random.nextInt(11);
+            score2 = random.nextInt(11);
+            result1.setText(""+score1);
+            result2.setText(""+score2);
+                if (score1 > score2) {
+                campo3.setText(time1.getText());
+                } else if (score2 > score1){
+                campo3.setText(time2.getText());
+            }
+        }
+    }
+    public void getClassificados(){
+        DAO dao = new DAO();
+        try{
+            Time[] classificados = dao.getClassificados();
+                time1Oitavas1TextField.setText(classificados[0].getNome());
+                time2Oitavas1TextField.setText(classificados[2].getNome());
+                time1Oitavas2TextField.setText(classificados[3].getNome());
+                time2Oitavas2TextField.setText(classificados[5].getNome());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -502,38 +955,86 @@ public class TelaBrackets extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton simular3Lugar;
+    private javax.swing.JButton simularFinal;
+    private javax.swing.JButton simularOitavas1;
+    private javax.swing.JButton simularOitavas2;
+    private javax.swing.JButton simularOitavas3;
+    private javax.swing.JButton simularOivavas4;
+    private javax.swing.JButton simularOivavas5;
+    private javax.swing.JButton simularOivavas6;
+    private javax.swing.JButton simularOivavas7;
+    private javax.swing.JButton simularOivavas8;
+    private javax.swing.JButton simularQuartas1;
+    private javax.swing.JButton simularQuartas2;
+    private javax.swing.JButton simularQuartas3;
+    private javax.swing.JButton simularQuartas4;
+    private javax.swing.JButton simularSemi1;
+    private javax.swing.JButton simularSemi2;
+    private javax.swing.JTextField time13LugarResultTextField;
+    private javax.swing.JTextField time13LugarTextField;
+    private javax.swing.JTextField time1FinalResultTextField;
+    private javax.swing.JTextField time1FinalTextField;
+    private javax.swing.JTextField time1Oitava1ResultTextField;
+    private javax.swing.JTextField time1Oitava2ResultTextField;
+    private javax.swing.JTextField time1Oitava3ResultTextField;
+    private javax.swing.JTextField time1Oitava4ResultTextField;
+    private javax.swing.JTextField time1Oitava4ResultTextField1;
+    private javax.swing.JTextField time1Oitava5ResultTextField;
+    private javax.swing.JTextField time1Oitava6ResultTextField;
+    private javax.swing.JTextField time1Oitava7ResultTextField;
+    private javax.swing.JTextField time1Oitava8ResultTextField;
+    private javax.swing.JTextField time1Oitavas1TextField;
+    private javax.swing.JTextField time1Oitavas2TextField;
+    private javax.swing.JTextField time1Oitavas3TextField;
+    private javax.swing.JTextField time1Oitavas4TextField;
+    private javax.swing.JTextField time1Oitavas5TextField;
+    private javax.swing.JTextField time1Oitavas6TextField;
+    private javax.swing.JTextField time1Oitavas7TextField;
+    private javax.swing.JTextField time1Oitavas8TextField;
+    private javax.swing.JTextField time1Quarta1ResultTextField;
+    private javax.swing.JTextField time1Quarta2ResultTextField;
+    private javax.swing.JTextField time1Quarta3ResultTextField;
+    private javax.swing.JTextField time1Quarta4ResultTextField;
+    private javax.swing.JTextField time1Quartas1TextField;
+    private javax.swing.JTextField time1Quartas2TextField;
+    private javax.swing.JTextField time1Quartas3TextField;
+    private javax.swing.JTextField time1Quartas4TextField;
+    private javax.swing.JTextField time1Semi1ResultTextField;
+    private javax.swing.JTextField time1Semi1TextField;
+    private javax.swing.JTextField time1Semi2ResultTextField;
+    private javax.swing.JTextField time1Semi2TextField;
+    private javax.swing.JTextField time23LugarResultTextField;
+    private javax.swing.JTextField time23LugarTextField;
+    private javax.swing.JTextField time2FinalResultTextField;
+    private javax.swing.JTextField time2FinalTextField;
+    private javax.swing.JTextField time2Oitava1ResultTextField;
+    private javax.swing.JTextField time2Oitava2ResultTextField;
+    private javax.swing.JTextField time2Oitava3ResultTextField;
+    private javax.swing.JTextField time2Oitava5ResultTextField;
+    private javax.swing.JTextField time2Oitava6ResultTextField;
+    private javax.swing.JTextField time2Oitava7ResultTextField;
+    private javax.swing.JTextField time2Oitava8ResultTextField;
+    private javax.swing.JTextField time2Oitavas1TextField;
+    private javax.swing.JTextField time2Oitavas2TextField;
+    private javax.swing.JTextField time2Oitavas3TextField;
+    private javax.swing.JTextField time2Oitavas4TextField;
+    private javax.swing.JTextField time2Oitavas5TextField;
+    private javax.swing.JTextField time2Oitavas6TextField;
+    private javax.swing.JTextField time2Oitavas7TextField;
+    private javax.swing.JTextField time2Oitavas8TextField;
+    private javax.swing.JTextField time2Quarta1ResultTextField;
+    private javax.swing.JTextField time2Quarta2ResultTextField;
+    private javax.swing.JTextField time2Quarta3ResultTextField;
+    private javax.swing.JTextField time2Quarta4ResultTextField;
+    private javax.swing.JTextField time2Quartas1TextField;
+    private javax.swing.JTextField time2Quartas2TextField;
+    private javax.swing.JTextField time2Quartas3TextField;
+    private javax.swing.JTextField time2Quartas4TextField;
+    private javax.swing.JTextField time2Semi1ResultTextField;
+    private javax.swing.JTextField time2Semi1TextField;
+    private javax.swing.JTextField time2Semi2ResultTextField;
+    private javax.swing.JTextField time2Semi2TextField;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
 }
