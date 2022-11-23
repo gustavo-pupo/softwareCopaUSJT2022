@@ -4,9 +4,11 @@
  */
 package softwarea3;
 
+import static java.lang.Integer.parseInt;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -25,11 +27,17 @@ public class TelaBrackets extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
         Partida[] partidas = dao.getPartidas();
-        if(partidas.length == 56){
+        if(partidas.length > 48){
             getQuartas();
-        } else if(partidas.length == 60){
-            getQuartas();
+        } 
+        if(partidas.length > 56){
             getSemis();
+        }
+        if(partidas.length > 60){
+            getFinals();
+        }
+        if (partidas.length > 63) {
+            get3Lugar();
         }
         } catch (Exception e){
             e.printStackTrace();
@@ -57,7 +65,7 @@ public class TelaBrackets extends javax.swing.JFrame {
         time2Oitavas4TextField = new javax.swing.JTextField();
         simularOitavas1 = new javax.swing.JButton();
         simularOitavas2 = new javax.swing.JButton();
-        simularOivavas4 = new javax.swing.JButton();
+        simularOitavas4 = new javax.swing.JButton();
         time1Oitava1ResultTextField = new javax.swing.JTextField();
         time2Oitava1ResultTextField = new javax.swing.JTextField();
         time1Oitava2ResultTextField = new javax.swing.JTextField();
@@ -76,10 +84,10 @@ public class TelaBrackets extends javax.swing.JFrame {
         time2Oitavas7TextField = new javax.swing.JTextField();
         time2Oitavas8TextField = new javax.swing.JTextField();
         time1Oitavas8TextField = new javax.swing.JTextField();
-        simularOivavas5 = new javax.swing.JButton();
-        simularOivavas6 = new javax.swing.JButton();
-        simularOivavas7 = new javax.swing.JButton();
-        simularOivavas8 = new javax.swing.JButton();
+        simularOitavas5 = new javax.swing.JButton();
+        simularOitavas6 = new javax.swing.JButton();
+        simularOitavas7 = new javax.swing.JButton();
+        simularOitavas8 = new javax.swing.JButton();
         time1Oitava5ResultTextField = new javax.swing.JTextField();
         time2Oitava5ResultTextField = new javax.swing.JTextField();
         time1Oitava6ResultTextField = new javax.swing.JTextField();
@@ -135,6 +143,10 @@ public class TelaBrackets extends javax.swing.JFrame {
         time13LugarResultTextField = new javax.swing.JTextField();
         time23LugarResultTextField = new javax.swing.JTextField();
         voltarButton = new javax.swing.JButton();
+        campeaoTextField = new javax.swing.JTextField();
+        time3LugarTextField = new javax.swing.JTextField();
+        zerarButton = new javax.swing.JButton();
+        simularTudoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Brackets");
@@ -148,10 +160,13 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1Oitavas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas1TextField.setFocusable(false);
 
         time2Oitavas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas1TextField.setFocusable(false);
 
         time1Oitavas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas2TextField.setFocusable(false);
         time1Oitavas2TextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 time1Oitavas2TextFieldActionPerformed(evt);
@@ -159,14 +174,19 @@ public class TelaBrackets extends javax.swing.JFrame {
         });
 
         time2Oitavas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas2TextField.setFocusable(false);
 
         time1Oitavas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas3TextField.setFocusable(false);
 
         time2Oitavas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas3TextField.setFocusable(false);
 
         time1Oitavas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas4TextField.setFocusable(false);
 
         time2Oitavas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas4TextField.setFocusable(false);
 
         simularOitavas1.setText("Simular");
         simularOitavas1.addActionListener(new java.awt.event.ActionListener() {
@@ -176,36 +196,47 @@ public class TelaBrackets extends javax.swing.JFrame {
         });
 
         simularOitavas2.setText("Simular");
+        simularOitavas2.setEnabled(false);
         simularOitavas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simularOitavas2ActionPerformed(evt);
             }
         });
 
-        simularOivavas4.setText("Simular");
-        simularOivavas4.addActionListener(new java.awt.event.ActionListener() {
+        simularOitavas4.setText("Simular");
+        simularOitavas4.setEnabled(false);
+        simularOitavas4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simularOivavas4ActionPerformed(evt);
+                simularOitavas4ActionPerformed(evt);
             }
         });
 
         time1Oitava1ResultTextField.setText("0");
+        time1Oitava1ResultTextField.setFocusable(false);
 
         time2Oitava1ResultTextField.setText("0");
+        time2Oitava1ResultTextField.setFocusable(false);
 
         time1Oitava2ResultTextField.setText("0");
+        time1Oitava2ResultTextField.setFocusable(false);
 
         time2Oitava2ResultTextField.setText("0");
+        time2Oitava2ResultTextField.setFocusable(false);
 
         time1Oitava3ResultTextField.setText("0");
+        time1Oitava3ResultTextField.setFocusable(false);
 
         time2Oitava3ResultTextField.setText("0");
+        time2Oitava3ResultTextField.setFocusable(false);
 
         time1Oitava4ResultTextField.setText("0");
+        time1Oitava4ResultTextField.setFocusable(false);
 
         time2Oitava4ResultTextField.setText("0");
+        time2Oitava4ResultTextField.setFocusable(false);
 
         simularOitavas3.setText("Simular");
+        simularOitavas3.setEnabled(false);
         simularOitavas3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simularOitavas3ActionPerformed(evt);
@@ -253,7 +284,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(simularOivavas4)
+                                .addComponent(simularOitavas4)
                                 .addGap(39, 39, 39))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(simularOitavas3)
@@ -301,7 +332,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                     .addComponent(time2Oitavas4TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(time2Oitava4ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(simularOivavas4)
+                .addComponent(simularOitavas4)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -309,64 +340,84 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1Oitavas5TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas5TextField.setFocusable(false);
 
         time2Oitavas5TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas5TextField.setFocusable(false);
 
         time1Oitavas6TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas6TextField.setFocusable(false);
 
         time2Oitavas6TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas6TextField.setFocusable(false);
 
         time1Oitavas7TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas7TextField.setFocusable(false);
 
         time2Oitavas7TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas7TextField.setFocusable(false);
 
         time2Oitavas8TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Oitavas8TextField.setFocusable(false);
 
         time1Oitavas8TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Oitavas8TextField.setFocusable(false);
 
-        simularOivavas5.setText("Simular");
-        simularOivavas5.addActionListener(new java.awt.event.ActionListener() {
+        simularOitavas5.setText("Simular");
+        simularOitavas5.setEnabled(false);
+        simularOitavas5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simularOivavas5ActionPerformed(evt);
+                simularOitavas5ActionPerformed(evt);
             }
         });
 
-        simularOivavas6.setText("Simular");
-        simularOivavas6.addActionListener(new java.awt.event.ActionListener() {
+        simularOitavas6.setText("Simular");
+        simularOitavas6.setEnabled(false);
+        simularOitavas6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simularOivavas6ActionPerformed(evt);
+                simularOitavas6ActionPerformed(evt);
             }
         });
 
-        simularOivavas7.setText("Simular");
-        simularOivavas7.addActionListener(new java.awt.event.ActionListener() {
+        simularOitavas7.setText("Simular");
+        simularOitavas7.setEnabled(false);
+        simularOitavas7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simularOivavas7ActionPerformed(evt);
+                simularOitavas7ActionPerformed(evt);
             }
         });
 
-        simularOivavas8.setText("Simular");
-        simularOivavas8.addActionListener(new java.awt.event.ActionListener() {
+        simularOitavas8.setText("Simular");
+        simularOitavas8.setEnabled(false);
+        simularOitavas8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simularOivavas8ActionPerformed(evt);
+                simularOitavas8ActionPerformed(evt);
             }
         });
 
         time1Oitava5ResultTextField.setText("0");
+        time1Oitava5ResultTextField.setFocusable(false);
 
         time2Oitava5ResultTextField.setText("0");
+        time2Oitava5ResultTextField.setFocusable(false);
 
         time1Oitava6ResultTextField.setText("0");
+        time1Oitava6ResultTextField.setFocusable(false);
 
         time2Oitava6ResultTextField.setText("0");
+        time2Oitava6ResultTextField.setFocusable(false);
 
         time1Oitava7ResultTextField.setText("0");
+        time1Oitava7ResultTextField.setFocusable(false);
 
         time2Oitava7ResultTextField.setText("0");
+        time2Oitava7ResultTextField.setFocusable(false);
 
         time1Oitava8ResultTextField.setText("0");
+        time1Oitava8ResultTextField.setFocusable(false);
 
         time2Oitava8ResultTextField.setText("0");
+        time2Oitava8ResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -399,10 +450,10 @@ public class TelaBrackets extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(simularOivavas7)
-                            .addComponent(simularOivavas8)
-                            .addComponent(simularOivavas6)
-                            .addComponent(simularOivavas5))
+                            .addComponent(simularOitavas7)
+                            .addComponent(simularOitavas8)
+                            .addComponent(simularOitavas6)
+                            .addComponent(simularOitavas5))
                         .addGap(34, 34, 34))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -417,7 +468,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                     .addComponent(time2Oitavas5TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(time2Oitava5ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(simularOivavas5)
+                .addComponent(simularOitavas5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(time1Oitavas6TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,7 +478,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                     .addComponent(time2Oitavas6TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(time2Oitava6ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(simularOivavas6)
+                .addComponent(simularOitavas6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(time1Oitavas7TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,7 +488,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                     .addComponent(time2Oitavas7TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(time2Oitava7ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(simularOivavas7)
+                .addComponent(simularOitavas7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(time1Oitavas8TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -447,7 +498,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                     .addComponent(time2Oitavas8TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(time2Oitava8ResultTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(simularOivavas8)
+                .addComponent(simularOitavas8)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -455,14 +506,19 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1Quartas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas1TextField.setFocusable(false);
 
         time2Quartas1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas1TextField.setFocusable(false);
 
         time1Quartas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas2TextField.setFocusable(false);
 
         time2Quartas2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas2TextField.setFocusable(false);
 
         simularQuartas2.setText("Simular");
+        simularQuartas2.setEnabled(false);
         simularQuartas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simularQuartas2ActionPerformed(evt);
@@ -470,6 +526,7 @@ public class TelaBrackets extends javax.swing.JFrame {
         });
 
         simularQuartas1.setText("Simular");
+        simularQuartas1.setEnabled(false);
         simularQuartas1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simularQuartas1ActionPerformed(evt);
@@ -477,12 +534,16 @@ public class TelaBrackets extends javax.swing.JFrame {
         });
 
         time1Quartas1ResultTextField.setText("0");
+        time1Quartas1ResultTextField.setFocusable(false);
 
         time2Quartas1ResultTextField.setText("0");
+        time2Quartas1ResultTextField.setFocusable(false);
 
         time1Quartas2ResultTextField.setText("0");
+        time1Quartas2ResultTextField.setFocusable(false);
 
         time2Quartas2ResultTextField.setText("0");
+        time2Quartas2ResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -543,14 +604,19 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1Quartas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas3TextField.setFocusable(false);
 
         time2Quartas3TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas3TextField.setFocusable(false);
 
         time2Quartas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Quartas4TextField.setFocusable(false);
 
         time1Quartas4TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Quartas4TextField.setFocusable(false);
 
         simularQuartas3.setText("Simular");
+        simularQuartas3.setEnabled(false);
         simularQuartas3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simularQuartas3ActionPerformed(evt);
@@ -558,6 +624,7 @@ public class TelaBrackets extends javax.swing.JFrame {
         });
 
         simularQuartas4.setText("Simular");
+        simularQuartas4.setEnabled(false);
         simularQuartas4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 simularQuartas4ActionPerformed(evt);
@@ -565,12 +632,16 @@ public class TelaBrackets extends javax.swing.JFrame {
         });
 
         time1Quartas3ResultTextField.setText("0");
+        time1Quartas3ResultTextField.setFocusable(false);
 
         time2Quartas3ResultTextField.setText("0");
+        time2Quartas3ResultTextField.setFocusable(false);
 
         time1Quartas4ResultTextField.setText("0");
+        time1Quartas4ResultTextField.setFocusable(false);
 
         time2Quartas4ResultTextField.setText("0");
+        time2Quartas4ResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -631,14 +702,24 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1Semi1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Semi1TextField.setFocusable(false);
 
         time2Semi1TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Semi1TextField.setFocusable(false);
 
         simularSemi1.setText("Simular");
+        simularSemi1.setEnabled(false);
+        simularSemi1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularSemi1ActionPerformed(evt);
+            }
+        });
 
         time1Semi1ResultTextField.setText("0");
+        time1Semi1ResultTextField.setFocusable(false);
 
         time2Semi1ResultTextField.setText("0");
+        time2Semi1ResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -681,14 +762,24 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1Semi2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1Semi2TextField.setFocusable(false);
 
         time2Semi2TextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2Semi2TextField.setFocusable(false);
 
         simularSemi2.setText("Simular");
+        simularSemi2.setEnabled(false);
+        simularSemi2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularSemi2ActionPerformed(evt);
+            }
+        });
 
         time1Semi2ResultTextField.setText("0");
+        time1Semi2ResultTextField.setFocusable(false);
 
         time2Semi2ResultTextField.setText("0");
+        time2Semi2ResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -729,14 +820,24 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time1FinalTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time1FinalTextField.setFocusable(false);
 
         time2FinalTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time2FinalTextField.setFocusable(false);
 
         simularFinal.setText("Simular");
+        simularFinal.setEnabled(false);
+        simularFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularFinalActionPerformed(evt);
+            }
+        });
 
         time1FinalResultTextField.setText("0");
+        time1FinalResultTextField.setFocusable(false);
 
         time2FinalResultTextField.setText("0");
+        time2FinalResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -777,14 +878,24 @@ public class TelaBrackets extends javax.swing.JFrame {
         jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         time13LugarTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time13LugarTextField.setFocusable(false);
 
         time23LugarTextField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        time23LugarTextField.setFocusable(false);
 
         simular3Lugar.setText("Simular");
+        simular3Lugar.setEnabled(false);
+        simular3Lugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simular3LugarActionPerformed(evt);
+            }
+        });
 
         time13LugarResultTextField.setText("0");
+        time13LugarResultTextField.setFocusable(false);
 
         time23LugarResultTextField.setText("0");
+        time23LugarResultTextField.setFocusable(false);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -828,6 +939,27 @@ public class TelaBrackets extends javax.swing.JFrame {
             }
         });
 
+        campeaoTextField.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Campeão", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 51, 51))); // NOI18N
+        campeaoTextField.setFocusable(false);
+
+        time3LugarTextField.setBorder(javax.swing.BorderFactory.createTitledBorder("3º Lugar"));
+        time3LugarTextField.setFocusable(false);
+
+        zerarButton.setText("Zerar");
+        zerarButton.setEnabled(false);
+        zerarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zerarButtonActionPerformed(evt);
+            }
+        });
+
+        simularTudoButton.setText("Simular Tudo");
+        simularTudoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                simularTudoButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -843,22 +975,34 @@ public class TelaBrackets extends javax.swing.JFrame {
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campeaoTextField)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(time3LugarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(voltarButton))
-                .addContainerGap(184, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(voltarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(zerarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(simularTudoButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(voltarButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(voltarButton)
+                    .addComponent(zerarButton)
+                    .addComponent(simularTudoButton))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -870,16 +1014,22 @@ public class TelaBrackets extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(campeaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(50, 50, 50)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(39, 39, 39)
+                                                .addComponent(time3LugarTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(119, 119, 119)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(150, Short.MAX_VALUE))
         );
 
@@ -892,62 +1042,195 @@ public class TelaBrackets extends javax.swing.JFrame {
     }//GEN-LAST:event_time1Oitavas2TextFieldActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        TelaGrupos telaGrupos = new TelaGrupos();
-        telaGrupos.setVisible(true);
+        DAO dao = new DAO();
+        try{
+            Partida[] p = dao.getPartidas();
+            if (p.length != 48 && p.length != 56 && p.length != 60 && p.length != 62 && p.length != 63 && p.length != 64) {
+                JOptionPane.showMessageDialog(null, "Termine de simular a fase atual antes de sair da tela.");
+            } else {
+                this.dispose();
+                TelaGrupos telaGrupos = new TelaGrupos();
+                telaGrupos.setVisible(true);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_voltarButtonActionPerformed
 
-    private void simularOivavas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas4ActionPerformed
-        simulaPartida(time1Oitavas4TextField, time1Oitava4ResultTextField, time2Oitavas4TextField, time2Oitava4ResultTextField, time2Quartas2TextField, 2, 1);
-    }//GEN-LAST:event_simularOivavas4ActionPerformed
+    private void simularOitavas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas4ActionPerformed
+        simulaPartida(time1Oitavas4TextField, time1Oitava4ResultTextField, time2Oitavas4TextField, time2Oitava4ResultTextField, time2Quartas2TextField, 1, simularOitavas5);
+        simularOitavas4.setEnabled(false);
+    }//GEN-LAST:event_simularOitavas4ActionPerformed
 
-    private void simularOivavas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas8ActionPerformed
-        simulaPartida(time1Oitavas8TextField, time1Oitava8ResultTextField, time2Oitavas8TextField, time2Oitava8ResultTextField, time2Quartas4TextField, 4, 1);
-    }//GEN-LAST:event_simularOivavas8ActionPerformed
+    private void simularOitavas8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas8ActionPerformed
+        simulaPartida(time1Oitavas8TextField, time1Oitava8ResultTextField, time2Oitavas8TextField, time2Oitava8ResultTextField, time2Quartas4TextField, 1, simularQuartas1);
+        simularOitavas8.setEnabled(false);
+    }//GEN-LAST:event_simularOitavas8ActionPerformed
 
-    private void simularOivavas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas7ActionPerformed
-        simulaPartida(time1Oitavas7TextField, time1Oitava7ResultTextField, time2Oitavas7TextField, time2Oitava7ResultTextField, time1Quartas4TextField, 4, 1);
+    private void simularOitavas7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas7ActionPerformed
+        simulaPartida(time1Oitavas7TextField, time1Oitava7ResultTextField, time2Oitavas7TextField, time2Oitava7ResultTextField, time1Quartas4TextField, 1, simularOitavas8);
+        simularOitavas7.setEnabled(false);
+    }//GEN-LAST:event_simularOitavas7ActionPerformed
 
-    }//GEN-LAST:event_simularOivavas7ActionPerformed
+    private void simularOitavas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas6ActionPerformed
+        simulaPartida(time1Oitavas6TextField, time1Oitava6ResultTextField, time2Oitavas6TextField, time2Oitava6ResultTextField, time2Quartas3TextField, 1, simularOitavas7);
+        simularOitavas6.setEnabled(false);
+    }//GEN-LAST:event_simularOitavas6ActionPerformed
 
-    private void simularOivavas6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas6ActionPerformed
-        simulaPartida(time1Oitavas6TextField, time1Oitava6ResultTextField, time2Oitavas6TextField, time2Oitava6ResultTextField, time2Quartas3TextField, 3, 1);
-    }//GEN-LAST:event_simularOivavas6ActionPerformed
-
-    private void simularOivavas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOivavas5ActionPerformed
-        simulaPartida(time1Oitavas5TextField, time1Oitava5ResultTextField, time2Oitavas5TextField, time2Oitava5ResultTextField, time1Quartas3TextField, 3, 1);
-    }//GEN-LAST:event_simularOivavas5ActionPerformed
+    private void simularOitavas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas5ActionPerformed
+        simulaPartida(time1Oitavas5TextField, time1Oitava5ResultTextField, time2Oitavas5TextField, time2Oitava5ResultTextField, time1Quartas3TextField, 1, simularOitavas6);
+        simularOitavas5.setEnabled(false);
+    }//GEN-LAST:event_simularOitavas5ActionPerformed
 
     private void simularOitavas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas1ActionPerformed
-        simulaPartida(time1Oitavas1TextField, time1Oitava1ResultTextField, time2Oitavas1TextField, time2Oitava1ResultTextField, time1Quartas1TextField, 1, 1);
+        simulaPartida(time1Oitavas1TextField, time1Oitava1ResultTextField, time2Oitavas1TextField, time2Oitava1ResultTextField, time1Quartas1TextField, 1, simularOitavas2);
+        simularOitavas1.setEnabled(false);
     }//GEN-LAST:event_simularOitavas1ActionPerformed
 
     private void simularOitavas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas2ActionPerformed
-        simulaPartida(time1Oitavas2TextField, time2Oitava2ResultTextField, time2Oitavas2TextField, time2Oitava2ResultTextField, time2Quartas1TextField, 1, 1);
+        simulaPartida(time1Oitavas2TextField, time1Oitava2ResultTextField, time2Oitavas2TextField, time2Oitava2ResultTextField, time2Quartas1TextField, 1, simularOitavas3);
+        simularOitavas2.setEnabled(false);
     }//GEN-LAST:event_simularOitavas2ActionPerformed
 
     private void simularOitavas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularOitavas3ActionPerformed
-        simulaPartida(time1Oitavas3TextField, time2Oitava3ResultTextField, time2Oitavas3TextField, time2Oitava3ResultTextField, time1Quartas2TextField, 2, 1);
+        simulaPartida(time1Oitavas3TextField, time2Oitava3ResultTextField, time2Oitavas3TextField, time2Oitava3ResultTextField, time1Quartas2TextField, 1, simularOitavas4);
+        simularOitavas3.setEnabled(false);
     }//GEN-LAST:event_simularOitavas3ActionPerformed
 
     private void simularQuartas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularQuartas1ActionPerformed
-        simulaPartida(time1Quartas1TextField, time1Quartas1ResultTextField, time2Quartas1TextField, time2Quartas1ResultTextField, time1Semi1TextField, 5, 2);
+        simulaPartida(time1Quartas1TextField, time1Quartas1ResultTextField, time2Quartas1TextField, time2Quartas1ResultTextField, time1Semi1TextField, 2, simularQuartas2);
+        simularQuartas1.setEnabled(false);
     }//GEN-LAST:event_simularQuartas1ActionPerformed
 
     private void simularQuartas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularQuartas2ActionPerformed
-        simulaPartida(time1Quartas2TextField, time1Quartas2ResultTextField, time2Quartas2TextField, time2Quartas2ResultTextField, time2Semi1TextField, 5, 2);
+        simulaPartida(time1Quartas2TextField, time1Quartas2ResultTextField, time2Quartas2TextField, time2Quartas2ResultTextField, time2Semi1TextField, 2, simularQuartas3);
+        simularQuartas2.setEnabled(false);
     }//GEN-LAST:event_simularQuartas2ActionPerformed
 
     private void simularQuartas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularQuartas3ActionPerformed
-        simulaPartida(time1Quartas3TextField, time1Quartas3ResultTextField, time2Quartas3TextField, time2Quartas3ResultTextField, time1Semi2TextField, 6, 2);
+        simulaPartida(time1Quartas3TextField, time1Quartas3ResultTextField, time2Quartas3TextField, time2Quartas3ResultTextField, time1Semi2TextField, 2, simularQuartas4);
+        simularQuartas3.setEnabled(false);
     }//GEN-LAST:event_simularQuartas3ActionPerformed
 
     private void simularQuartas4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularQuartas4ActionPerformed
-        simulaPartida(time1Quartas4TextField, time1Quartas4ResultTextField, time2Quartas4TextField, time2Quartas4ResultTextField, time2Semi2TextField, 6, 2);
+        simulaPartida(time1Quartas4TextField, time1Quartas4ResultTextField, time2Quartas4TextField, time2Quartas4ResultTextField, time2Semi2TextField, 2, simularSemi1);
+        simularQuartas4.setEnabled(false);
     }//GEN-LAST:event_simularQuartas4ActionPerformed
 
-    public void simulaPartida(JTextField time1, JTextField result1, JTextField time2, JTextField result2, JTextField campo3, int chave, int fase){
+    private void simularSemi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularSemi1ActionPerformed
+        simulaPartida(time1Semi1TextField, time1Semi1ResultTextField, time2Semi1TextField, time2Semi1ResultTextField, time1FinalTextField, 3, simularSemi2);
+        if (Integer.parseInt(time1Semi1ResultTextField.getText()) > Integer.parseInt(time2Semi1ResultTextField.getText())) {
+            time13LugarTextField.setText(time2Semi1TextField.getText());
+        } else {
+            time13LugarTextField.setText(time1Semi1TextField.getText());
+        }
+        simularSemi1.setEnabled(false);
+    }//GEN-LAST:event_simularSemi1ActionPerformed
+
+    private void simularSemi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularSemi2ActionPerformed
+        simulaPartida(time1Semi2TextField, time1Semi2ResultTextField, time2Semi2TextField, time2Semi2ResultTextField, time2FinalTextField, 3, simularFinal);
+        if (Integer.parseInt(time1Semi2ResultTextField.getText()) > Integer.parseInt(time2Semi2ResultTextField.getText())) {
+            time23LugarTextField.setText(time2Semi2TextField.getText());
+        } else {
+            time23LugarTextField.setText(time1Semi2TextField.getText());
+        }
+        simularSemi2.setEnabled(false);
+    }//GEN-LAST:event_simularSemi2ActionPerformed
+
+    private void simularFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularFinalActionPerformed
+        simulaPartida(time1FinalTextField, time1FinalResultTextField, time2FinalTextField, time2FinalResultTextField, campeaoTextField, 4, simular3Lugar);
+        simularFinal.setEnabled(false);
+    }//GEN-LAST:event_simularFinalActionPerformed
+
+    private void simular3LugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simular3LugarActionPerformed
+        simulaPartida(time13LugarTextField, time13LugarResultTextField, time23LugarTextField, time23LugarResultTextField, time3LugarTextField, 5, zerarButton);
+        simular3Lugar.setEnabled(false);
+    }//GEN-LAST:event_simular3LugarActionPerformed
+
+    private void zerarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zerarButtonActionPerformed
+        DAO dao = new DAO();
+        try{
+            dao.LimparJogos();
+            dao.LimparTimes();
+            
+            TelaGrupos tg = new TelaGrupos();
+            tg.setVisible(true);
+            this.dispose();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_zerarButtonActionPerformed
+
+    private void simularTudoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularTudoButtonActionPerformed
+        DAO dao = new DAO();
+        try{
+            if (dao.getPartidas().length > 48) {
+                JOptionPane.showMessageDialog(null, "Não é possível simular tudo depois de começar a simular individualmente.");
+            } else {
+                simularOitavas1.setEnabled(false);
+        
+                //Simulação das oitavas
+                simulaPartida(time1Oitavas1TextField, time1Oitava1ResultTextField, time2Oitavas1TextField, time2Oitava1ResultTextField, time1Quartas1TextField, 1, simularOitavas2);
+                simulaPartida(time1Oitavas2TextField, time1Oitava2ResultTextField, time2Oitavas2TextField, time2Oitava2ResultTextField, time2Quartas1TextField, 1, simularOitavas3);
+                simulaPartida(time1Oitavas3TextField, time2Oitava3ResultTextField, time2Oitavas3TextField, time2Oitava3ResultTextField, time1Quartas2TextField, 1, simularOitavas4);
+                simulaPartida(time1Oitavas4TextField, time1Oitava4ResultTextField, time2Oitavas4TextField, time2Oitava4ResultTextField, time2Quartas2TextField, 1, simularOitavas5);
+                simulaPartida(time1Oitavas5TextField, time1Oitava5ResultTextField, time2Oitavas5TextField, time2Oitava5ResultTextField, time1Quartas3TextField, 1, simularOitavas6);
+                simulaPartida(time1Oitavas6TextField, time1Oitava6ResultTextField, time2Oitavas6TextField, time2Oitava6ResultTextField, time2Quartas3TextField, 1, simularOitavas7);
+                simulaPartida(time1Oitavas7TextField, time1Oitava7ResultTextField, time2Oitavas7TextField, time2Oitava7ResultTextField, time1Quartas4TextField, 1, simularOitavas8);
+                simulaPartida(time1Oitavas8TextField, time1Oitava8ResultTextField, time2Oitavas8TextField, time2Oitava8ResultTextField, time2Quartas4TextField, 1, simularQuartas1);
+                //Simulação das quartas
+                simulaPartida(time1Quartas1TextField, time1Quartas1ResultTextField, time2Quartas1TextField, time2Quartas1ResultTextField, time1Semi1TextField, 2, simularQuartas2);
+                simulaPartida(time1Quartas2TextField, time1Quartas2ResultTextField, time2Quartas2TextField, time2Quartas2ResultTextField, time2Semi1TextField, 2, simularQuartas3);
+                simulaPartida(time1Quartas3TextField, time1Quartas3ResultTextField, time2Quartas3TextField, time2Quartas3ResultTextField, time1Semi2TextField, 2, simularQuartas4);
+                simulaPartida(time1Quartas4TextField, time1Quartas4ResultTextField, time2Quartas4TextField, time2Quartas4ResultTextField, time2Semi2TextField, 2, simularSemi1);
+                //Simulação das semi-finais
+                /////////////// semi 1
+                simulaPartida(time1Semi1TextField, time1Semi1ResultTextField, time2Semi1TextField, time2Semi1ResultTextField, time1FinalTextField, 3, simularSemi2);
+                if (Integer.parseInt(time1Semi1ResultTextField.getText()) > Integer.parseInt(time2Semi1ResultTextField.getText())) {
+                    time13LugarTextField.setText(time2Semi1TextField.getText());
+                } else {
+                    time13LugarTextField.setText(time1Semi1TextField.getText());
+                }
+                /////////////// semi 2
+                simulaPartida(time1Semi2TextField, time1Semi2ResultTextField, time2Semi2TextField, time2Semi2ResultTextField, time2FinalTextField, 3, simularFinal);
+                if (Integer.parseInt(time1Semi2ResultTextField.getText()) > Integer.parseInt(time2Semi2ResultTextField.getText())) {
+                    time23LugarTextField.setText(time2Semi2TextField.getText());
+                } else {
+                    time23LugarTextField.setText(time1Semi2TextField.getText());
+                }
+                //Simulação da final
+                simulaPartida(time1FinalTextField, time1FinalResultTextField, time2FinalTextField, time2FinalResultTextField, campeaoTextField, 4, simular3Lugar);
+                //simulação do 3º lugar
+                simulaPartida(time13LugarTextField, time13LugarResultTextField, time23LugarTextField, time23LugarResultTextField, time3LugarTextField, 5, zerarButton);
+
+                simularOitavas1.setEnabled(false);
+                simularOitavas2.setEnabled(false);
+                simularOitavas3.setEnabled(false);
+                simularOitavas4.setEnabled(false);
+                simularOitavas5.setEnabled(false);
+                simularOitavas6.setEnabled(false);
+                simularOitavas7.setEnabled(false);
+                simularOitavas8.setEnabled(false);
+
+                simularQuartas1.setEnabled(false);
+                simularQuartas2.setEnabled(false);
+                simularQuartas3.setEnabled(false);
+                simularQuartas4.setEnabled(false);
+
+                simularSemi1.setEnabled(false);
+                simularSemi2.setEnabled(false);
+
+                simularFinal.setEnabled(false);
+                simular3Lugar.setEnabled(false);
+
+                simularTudoButton.setEnabled(false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }       
+    }//GEN-LAST:event_simularTudoButtonActionPerformed
+    
+    public void simulaPartida(JTextField time1, JTextField result1, JTextField time2, JTextField result2, JTextField campo3, int fase, JButton proximo){
         DAO dao = new DAO();
         Random random = new Random();
         try{
@@ -958,25 +1241,25 @@ public class TelaBrackets extends javax.swing.JFrame {
         if (score1 > score2) {
             campo3.setText(time1.getText());
             dao.atualizaFase(time1.getText());
-            dao.atualizaChave(time1.getText(), chave);
         } else if (score2 > score1){
             campo3.setText(time2.getText());
             dao.atualizaFase(time2.getText());
-            dao.atualizaChave(time2.getText(), chave);
         } else {
             score1 = random.nextInt(11);
             score2 = random.nextInt(11);
-            result1.setText(""+score1);
-            result2.setText(""+score2);
+                while(score1 == score2){
+                    score1 = random.nextInt(11);
+                    score2 = random.nextInt(11);
+                }
+                result1.setText(""+score1);
+                result2.setText(""+score2);
                 if (score1 > score2) {
                 campo3.setText(time1.getText());
                 dao.atualizaFase(time1.getText());
-                dao.atualizaChave(time1.getText(), chave);
                 } else if (score2 > score1){
                 campo3.setText(time2.getText());
                 dao.atualizaFase(time2.getText());
-                dao.atualizaChave(time2.getText(), chave);
-            }
+                }
         }
             Time[] times = dao.getClassificados();
             for (int i = 0; i < 16; i++) {
@@ -989,6 +1272,7 @@ public class TelaBrackets extends javax.swing.JFrame {
                     }
                 }
             }
+            proximo.setEnabled(true);
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -998,22 +1282,44 @@ public class TelaBrackets extends javax.swing.JFrame {
         DAO dao = new DAO();
         try{
             Time[] classificados = dao.getClassificados();
-                time1Oitavas1TextField.setText(classificados[0].getNome());
-                time2Oitavas1TextField.setText(classificados[3].getNome());
-                time1Oitavas2TextField.setText(classificados[4].getNome());
-                time2Oitavas2TextField.setText(classificados[7].getNome());
-                time1Oitavas3TextField.setText(classificados[8].getNome());
-                time2Oitavas3TextField.setText(classificados[11].getNome());
-                time1Oitavas4TextField.setText(classificados[12].getNome());
-                time2Oitavas4TextField.setText(classificados[15].getNome());
-                time1Oitavas5TextField.setText(classificados[2].getNome());
-                time2Oitavas5TextField.setText(classificados[1].getNome());
-                time1Oitavas6TextField.setText(classificados[6].getNome());
-                time2Oitavas6TextField.setText(classificados[5].getNome());
-                time1Oitavas7TextField.setText(classificados[10].getNome());
-                time2Oitavas7TextField.setText(classificados[9].getNome());
-                time1Oitavas8TextField.setText(classificados[14].getNome());
-                time2Oitavas8TextField.setText(classificados[13].getNome());                
+            Partida[] oitavas = dao.getPartidasPorFase(1);
+            
+            if (oitavas.length == 8) {
+                time1Oitava1ResultTextField.setText(""+oitavas[0].getScoreHost());
+                time2Oitava1ResultTextField.setText(""+oitavas[0].getScoreAway());
+                time1Oitava2ResultTextField.setText(""+oitavas[1].getScoreHost());
+                time2Oitava2ResultTextField.setText(""+oitavas[1].getScoreAway());
+                time1Oitava3ResultTextField.setText(""+oitavas[2].getScoreHost());
+                time2Oitava3ResultTextField.setText(""+oitavas[2].getScoreAway());
+                time1Oitava4ResultTextField.setText(""+oitavas[3].getScoreHost());
+                time2Oitava4ResultTextField.setText(""+oitavas[3].getScoreAway());
+                time1Oitava5ResultTextField.setText(""+oitavas[4].getScoreHost());
+                time2Oitava5ResultTextField.setText(""+oitavas[4].getScoreAway());
+                time1Oitava6ResultTextField.setText(""+oitavas[5].getScoreHost());
+                time2Oitava6ResultTextField.setText(""+oitavas[5].getScoreAway());
+                time1Oitava7ResultTextField.setText(""+oitavas[6].getScoreHost());
+                time2Oitava7ResultTextField.setText(""+oitavas[6].getScoreAway());
+                time1Oitava8ResultTextField.setText(""+oitavas[7].getScoreHost());
+                time2Oitava8ResultTextField.setText(""+oitavas[7].getScoreAway());
+                simularTudoButton.setEnabled(false);
+            }           
+            
+            time1Oitavas1TextField.setText(classificados[0].getNome());
+            time2Oitavas1TextField.setText(classificados[3].getNome());
+            time1Oitavas2TextField.setText(classificados[4].getNome());
+            time2Oitavas2TextField.setText(classificados[7].getNome());
+            time1Oitavas3TextField.setText(classificados[8].getNome());
+            time2Oitavas3TextField.setText(classificados[11].getNome());
+            time1Oitavas4TextField.setText(classificados[12].getNome());
+            time2Oitavas4TextField.setText(classificados[15].getNome());
+            time1Oitavas5TextField.setText(classificados[2].getNome());
+            time2Oitavas5TextField.setText(classificados[1].getNome());
+            time1Oitavas6TextField.setText(classificados[6].getNome());
+            time2Oitavas6TextField.setText(classificados[5].getNome());
+            time1Oitavas7TextField.setText(classificados[10].getNome());
+            time2Oitavas7TextField.setText(classificados[9].getNome());
+            time1Oitavas8TextField.setText(classificados[14].getNome());
+            time2Oitavas8TextField.setText(classificados[13].getNome());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1021,43 +1327,34 @@ public class TelaBrackets extends javax.swing.JFrame {
     public void getQuartas(){
         DAO dao = new DAO();
         try{
-            Time[] quartas = dao.getQuartas();
-            int contador = 0;
+            Partida[] oitavas = dao.getPartidasPorFase(1);
+            Partida[] quartas = dao.getPartidasPorFase(2);
             
-            Arrays.sort(quartas);
-            
-            for (int i = 0; i < quartas.length; i++) {
-                if (quartas[i].getChave() == 5 && contador == 0) {
-                    quartas[i].setChave(1);
-                    contador++;
-                } else if (quartas[i].getChave() == 5 && contador == 1) {
-                    quartas[i].setChave(2);
-                    contador++;
-                } else if (quartas[i].getChave() == 6 && contador == 2){
-                    quartas[i].setChave(3);
-                    contador++;
-                } else if (quartas[i].getChave() == 6 && contador == 3) {
-                    quartas[i].setChave(4);
-                    contador++;
-                }
-                System.out.println("contador " + contador);
+            if (oitavas.length == 8) {
+                time1Quartas1TextField.setText(oitavas[0].getScoreHost() > oitavas[0].getScoreAway() ? dao.getTime(oitavas[0].getHost()) : dao.getTime(oitavas[0].getAway()));
+                time2Quartas1TextField.setText(oitavas[1].getScoreHost() > oitavas[1].getScoreAway() ? dao.getTime(oitavas[1].getHost()) : dao.getTime(oitavas[1].getAway()));
+                time1Quartas2TextField.setText(oitavas[2].getScoreHost() > oitavas[2].getScoreAway() ? dao.getTime(oitavas[2].getHost()) : dao.getTime(oitavas[2].getAway()));
+                time2Quartas2TextField.setText(oitavas[3].getScoreHost() > oitavas[3].getScoreAway() ? dao.getTime(oitavas[3].getHost()) : dao.getTime(oitavas[3].getAway()));
+                time1Quartas3TextField.setText(oitavas[4].getScoreHost() > oitavas[4].getScoreAway() ? dao.getTime(oitavas[4].getHost()) : dao.getTime(oitavas[4].getAway()));
+                time2Quartas3TextField.setText(oitavas[5].getScoreHost() > oitavas[5].getScoreAway() ? dao.getTime(oitavas[5].getHost()) : dao.getTime(oitavas[5].getAway()));
+                time1Quartas4TextField.setText(oitavas[6].getScoreHost() > oitavas[6].getScoreAway() ? dao.getTime(oitavas[6].getHost()) : dao.getTime(oitavas[6].getAway()));
+                time2Quartas4TextField.setText(oitavas[7].getScoreHost() > oitavas[7].getScoreAway() ? dao.getTime(oitavas[7].getHost()) : dao.getTime(oitavas[7].getAway()));
+                simularOitavas1.setEnabled(false);
+                simularQuartas1.setEnabled(true);
+            } 
+            if (quartas.length == 4) {                
+                time1Quartas1ResultTextField.setText(""+quartas[0].getScoreHost());
+                time2Quartas1ResultTextField.setText(""+quartas[0].getScoreAway());
+                time1Quartas2ResultTextField.setText(""+quartas[1].getScoreHost());
+                time2Quartas2ResultTextField.setText(""+quartas[1].getScoreAway());
+                time1Quartas3ResultTextField.setText(""+quartas[2].getScoreHost());
+                time2Quartas3ResultTextField.setText(""+quartas[2].getScoreAway());
+                time1Quartas4ResultTextField.setText(""+quartas[3].getScoreHost());
+                time2Quartas4ResultTextField.setText(""+quartas[3].getScoreAway());
+                simularSemi1.setEnabled(true);
+                simularOitavas1.setEnabled(false);
             }
             
-            Arrays.sort(quartas);
-            
-            for (int i = 0; i < 8; i++) {
-                System.out.println(quartas[i].getChave());
-            }
-            
-            
-            time1Quartas1TextField.setText(quartas[0].getNome());
-            time2Quartas1TextField.setText(quartas[1].getNome());
-            time1Quartas2TextField.setText(quartas[2].getNome());
-            time2Quartas2TextField.setText(quartas[3].getNome());
-            time1Quartas3TextField.setText(quartas[4].getNome());
-            time2Quartas3TextField.setText(quartas[5].getNome());
-            time1Quartas4TextField.setText(quartas[6].getNome());
-            time2Quartas4TextField.setText(quartas[7].getNome());
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -1065,14 +1362,63 @@ public class TelaBrackets extends javax.swing.JFrame {
     public void getSemis(){
         DAO dao = new DAO();
         try{
-            Time[] semis = dao.getSemis();
-            
-            Arrays.sort(semis);
-            
-            time1Semi1TextField.setText(semis[0].getNome());
-            time2Semi1TextField.setText(semis[1].getNome());
-            time1Semi2TextField.setText(semis[2].getNome());
-            time2Semi2TextField.setText(semis[3].getNome());
+            Partida[] quartas = dao.getPartidasPorFase(2);
+            Partida[] semis = dao.getPartidasPorFase(3);
+            if (quartas.length == 4) {
+                time1Semi1TextField.setText(quartas[0].getScoreHost() > quartas[0].getScoreAway() ? dao.getTime(quartas[0].getHost()) : dao.getTime(quartas[0].getAway()));
+                time2Semi1TextField.setText(quartas[1].getScoreHost() > quartas[1].getScoreAway() ? dao.getTime(quartas[1].getHost()) : dao.getTime(quartas[1].getAway()));
+                time1Semi2TextField.setText(quartas[2].getScoreHost() > quartas[2].getScoreAway() ? dao.getTime(quartas[2].getHost()) : dao.getTime(quartas[2].getAway()));
+                time2Semi2TextField.setText(quartas[3].getScoreHost() > quartas[3].getScoreAway() ? dao.getTime(quartas[3].getHost()) : dao.getTime(quartas[3].getAway()));
+                simularOitavas1.setEnabled(false);
+                simularQuartas1.setEnabled(false);
+            }
+            if (semis.length == 2) {
+                time1Semi1ResultTextField.setText(""+semis[0].getScoreHost());
+                time2Semi1ResultTextField.setText(""+semis[0].getScoreAway());
+                time1Semi2ResultTextField.setText(""+semis[1].getScoreHost());
+                time2Semi2ResultTextField.setText(""+semis[1].getScoreAway());
+                time13LugarTextField.setText(semis[0].getScoreHost() > semis[0].getScoreAway() ? dao.getTime(semis[0].getAway()) : dao.getTime(semis[0].getHost()));
+                time23LugarTextField.setText(semis[1].getScoreHost() > semis[1].getScoreAway() ? dao.getTime(semis[1].getAway()) : dao.getTime(semis[1].getHost()));
+                simularSemi1.setEnabled(false);
+                simularOitavas1.setEnabled(false);
+                simularFinal.setEnabled(true);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void getFinals(){
+        DAO dao = new DAO();
+        try{
+            Partida[] semis = dao.getPartidasPorFase(3);
+            Partida[] finals = dao.getPartidasPorFase(4);
+            if (semis.length == 2) {
+                time1FinalTextField.setText(semis[0].getScoreHost() > semis[0].getScoreAway() ? dao.getTime(semis[0].getHost()) : dao.getTime(semis[0].getAway()));
+                time2FinalTextField.setText(semis[1].getScoreHost() > semis[1].getScoreAway() ? dao.getTime(semis[1].getHost()) : dao.getTime(semis[1].getAway()));
+            } 
+            if (finals.length == 1) {
+                time1FinalResultTextField.setText(""+finals[0].getScoreHost());
+                time2FinalResultTextField.setText(""+finals[0].getScoreAway());
+                campeaoTextField.setText(finals[0].getScoreHost() > finals[0].getScoreAway() ? dao.getTime(finals[0].getHost()) : dao.getTime(finals[0].getAway()));
+                simularFinal.setEnabled(false);
+                simularOitavas1.setEnabled(false);
+                simular3Lugar.setEnabled(true);
+            }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void get3Lugar(){
+        DAO dao = new DAO();
+        try{
+            Partida[] thirds = dao.getPartidasPorFase(5);
+            if (thirds.length == 1) {
+                time13LugarResultTextField.setText(""+thirds[0].getScoreHost());
+                time23LugarResultTextField.setText(""+thirds[0].getScoreAway());
+                time3LugarTextField.setText(thirds[0].getScoreHost() > thirds[0].getScoreAway() ? dao.getTime(thirds[0].getHost()) : dao.getTime(thirds[0].getAway()));
+                simular3Lugar.setEnabled(false);
+                zerarButton.setEnabled(true);
+            }
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -1113,6 +1459,7 @@ public class TelaBrackets extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField campeaoTextField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1126,17 +1473,18 @@ public class TelaBrackets extends javax.swing.JFrame {
     private javax.swing.JButton simularOitavas1;
     private javax.swing.JButton simularOitavas2;
     private javax.swing.JButton simularOitavas3;
-    private javax.swing.JButton simularOivavas4;
-    private javax.swing.JButton simularOivavas5;
-    private javax.swing.JButton simularOivavas6;
-    private javax.swing.JButton simularOivavas7;
-    private javax.swing.JButton simularOivavas8;
+    private javax.swing.JButton simularOitavas4;
+    private javax.swing.JButton simularOitavas5;
+    private javax.swing.JButton simularOitavas6;
+    private javax.swing.JButton simularOitavas7;
+    private javax.swing.JButton simularOitavas8;
     private javax.swing.JButton simularQuartas1;
     private javax.swing.JButton simularQuartas2;
     private javax.swing.JButton simularQuartas3;
     private javax.swing.JButton simularQuartas4;
     private javax.swing.JButton simularSemi1;
     private javax.swing.JButton simularSemi2;
+    private javax.swing.JButton simularTudoButton;
     private javax.swing.JTextField time13LugarResultTextField;
     private javax.swing.JTextField time13LugarTextField;
     private javax.swing.JTextField time1FinalResultTextField;
@@ -1201,6 +1549,8 @@ public class TelaBrackets extends javax.swing.JFrame {
     private javax.swing.JTextField time2Semi1TextField;
     private javax.swing.JTextField time2Semi2ResultTextField;
     private javax.swing.JTextField time2Semi2TextField;
+    private javax.swing.JTextField time3LugarTextField;
     private javax.swing.JButton voltarButton;
+    private javax.swing.JButton zerarButton;
     // End of variables declaration//GEN-END:variables
 }

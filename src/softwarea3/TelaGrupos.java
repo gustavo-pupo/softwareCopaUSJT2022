@@ -715,7 +715,6 @@ public class TelaGrupos extends javax.swing.JFrame {
             int contador1 = 0;
             int contador2 = 0;
             int contador3 = 0;
-            int contador4 = 0;
             for (int i = 0; i < 4; i++) {
                 if (grupo[i].getPontos() == top2[0] && contador1 < 1) {
                     grupo[i].setEliminatorias(1);
@@ -765,8 +764,9 @@ public class TelaGrupos extends javax.swing.JFrame {
     private void simulaGruposButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simulaGruposButtonActionPerformed
         // TODO add your handling code here:
         DAO dao = new DAO();
-        try {
-            Time[] grupoA = dao.getTimesPorGrupo(1);
+        try {Partida[] partidas = dao.getPartidas();
+            if (partidas.length == 0) {
+                Time[] grupoA = dao.getTimesPorGrupo(1);
             Time[] grupoB = dao.getTimesPorGrupo(2);
             Time[] grupoC = dao.getTimesPorGrupo(3);
             Time[] grupoD = dao.getTimesPorGrupo(4);
@@ -778,41 +778,43 @@ public class TelaGrupos extends javax.swing.JFrame {
             if (grupoA.length == 0 || grupoB.length == 0 || grupoC.length == 0 || grupoD.length == 0 || grupoE.length == 0 || grupoF.length == 0 || grupoG.length == 0 || grupoH.length == 0) {
                 JOptionPane.showMessageDialog(null, "Clique em registrar antes de realizar a simulação.");
             } else {
-             
-            simulaGrupo(grupoA);
-            simulaGrupo(grupoB);
-            simulaGrupo(grupoC);
-            simulaGrupo(grupoD);
-            simulaGrupo(grupoE);
-            simulaGrupo(grupoF);
-            simulaGrupo(grupoG);
-            simulaGrupo(grupoH);
+                simulaGrupo(grupoA);
+                simulaGrupo(grupoB);
+                simulaGrupo(grupoC);
+                simulaGrupo(grupoD);
+                simulaGrupo(grupoE);
+                simulaGrupo(grupoF);
+                simulaGrupo(grupoG);
+                simulaGrupo(grupoH);
 
-            grupoA = dao.getTimesPorGrupo(1);
-            grupoB = dao.getTimesPorGrupo(2);
-            grupoC = dao.getTimesPorGrupo(3);
-            grupoD = dao.getTimesPorGrupo(4);
-            grupoE = dao.getTimesPorGrupo(5);
-            grupoF = dao.getTimesPorGrupo(6);
-            grupoG = dao.getTimesPorGrupo(7);
-            grupoH = dao.getTimesPorGrupo(8);
+                grupoA = dao.getTimesPorGrupo(1);
+                grupoB = dao.getTimesPorGrupo(2);
+                grupoC = dao.getTimesPorGrupo(3);
+                grupoD = dao.getTimesPorGrupo(4);
+                grupoE = dao.getTimesPorGrupo(5);
+                grupoF = dao.getTimesPorGrupo(6);
+                grupoG = dao.getTimesPorGrupo(7);
+                grupoH = dao.getTimesPorGrupo(8);
 
-            //Definição de times que passaram para as eliminatórias - GRUPO A
-            defineEliminatorias(grupoA);            
-            //Definição de times que passaram para as elimintórias - GRUPO B
-            defineEliminatorias(grupoB);
-            //Definição de times que passaram para as elimintórias - GRUPO C
-            defineEliminatorias(grupoC);
-            //Definição de times que passaram para as elimintórias - GRUPO D
-            defineEliminatorias(grupoD);
-            //Definição de times que passaram para as elimintórias - GRUPO E
-            defineEliminatorias(grupoE);
-            //Definição de times que passaram para as elimintórias - GRUPO F
-            defineEliminatorias(grupoF);
-            //Definição de times que passaram para as elimintórias - GRUPO G
-            defineEliminatorias(grupoG);
-            //Definição de times que passaram para as elimintórias - GRUPO H
-            defineEliminatorias(grupoH);
+                //Definição de times que passaram para as eliminatórias - GRUPO A
+                defineEliminatorias(grupoA);            
+                //Definição de times que passaram para as elimintórias - GRUPO B
+                defineEliminatorias(grupoB);
+                //Definição de times que passaram para as elimintórias - GRUPO C
+                defineEliminatorias(grupoC);
+                //Definição de times que passaram para as elimintórias - GRUPO D
+                defineEliminatorias(grupoD);
+                //Definição de times que passaram para as elimintórias - GRUPO E
+                defineEliminatorias(grupoE);
+                //Definição de times que passaram para as elimintórias - GRUPO F
+                defineEliminatorias(grupoF);
+                //Definição de times que passaram para as elimintórias - GRUPO G
+                defineEliminatorias(grupoG);
+                //Definição de times que passaram para as elimintórias - GRUPO H
+                defineEliminatorias(grupoH);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Simulação já realizada");
             }
         } catch (Exception e) {
             e.printStackTrace();

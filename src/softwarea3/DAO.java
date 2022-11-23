@@ -192,56 +192,27 @@ public class DAO {
             return times;
         }
     }
-    public Time[] getQuartas() throws Exception {
-        String sql = "SELECT * FROM time WHERE fase >= 2";
+    public Partida[] getPartidasPorFase(int fase) throws Exception{
+        String sql = "SELECT * FROM jogo WHERE fase = ?";
         try (Connection conn = ConectorBD.obtemConexao();
              PreparedStatement ps = conn.prepareStatement(
              sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
-                  ResultSet.CONCUR_READ_ONLY )){
+                  ResultSet.CONCUR_READ_ONLY )) {
+            ps.setInt(1, fase);
             ResultSet rs = ps.executeQuery();
-            int totalTimes = rs.last()? rs.getRow(): 0;
-            Time[] times = new Time[totalTimes];
+            int totalPartidas = rs.last()? rs.getRow(): 0;
+            Partida[] partidas = new Partida[totalPartidas];
             rs.beforeFirst();
             int cont = 0;
             while (rs.next()) {
-                int id = rs.getInt("idTime");
-                String nome = rs.getString("nome");
-                int saldoGols = rs.getInt("saldoGols");
-                int golsSofridos = rs.getInt("golsSofridos");
-                int pontos = rs.getInt("pontos");
-                int grupo = rs.getInt("grupo_idGrupo");
-                int eliminatorias = rs.getInt("eliminatorias");
-                int fase = rs.getInt("fase");
-                int chave = rs.getInt("chave");
-                times[cont++] = new Time(id, nome, saldoGols, golsSofridos, pontos, grupo, eliminatorias, fase, chave);
+                int id = rs.getInt("idjogo");
+                int host = rs.getInt("host");
+                int away = rs.getInt("visitante");
+                int scoreHost = rs.getInt("scoreHost");
+                int scoreAway = rs.getInt("scoreVisitante");
+                partidas[cont++] = new Partida(host, away, scoreHost, scoreAway);
             }
-            return times;
-        }
-    }
-    public Time[] getSemis() throws Exception {
-        String sql = "SELECT * FROM time WHERE fase >= 3";
-        try (Connection conn = ConectorBD.obtemConexao();
-             PreparedStatement ps = conn.prepareStatement(
-             sql, ResultSet.TYPE_SCROLL_INSENSITIVE, 
-                  ResultSet.CONCUR_READ_ONLY )){
-            ResultSet rs = ps.executeQuery();
-            int totalTimes = rs.last()? rs.getRow(): 0;
-            Time[] times = new Time[totalTimes];
-            rs.beforeFirst();
-            int cont = 0;
-            while (rs.next()) {
-                int id = rs.getInt("idTime");
-                String nome = rs.getString("nome");
-                int saldoGols = rs.getInt("saldoGols");
-                int golsSofridos = rs.getInt("golsSofridos");
-                int pontos = rs.getInt("pontos");
-                int grupo = rs.getInt("grupo_idGrupo");
-                int eliminatorias = rs.getInt("eliminatorias");
-                int fase = rs.getInt("fase");
-                int chave = rs.getInt("chave");
-                times[cont++] = new Time(id, nome, saldoGols, golsSofridos, pontos, grupo, eliminatorias, fase, chave);
-            }
-            return times;
+            return partidas;
         }
     }
     public void criaPartida (Partida partida) throws Exception {
