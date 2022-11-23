@@ -71,7 +71,7 @@ public class DAO {
     }
     
     public void inserirTime (Time time) throws Exception {
-        String sql = "INSERT INTO time (idTime, nome, saldoGols, golsSofridos, pontos, grupo_idGrupo, eliminatorias, fase, chave) VALUES (?, ?, ?, ?, ?, ?, ?, 0, 0)";
+        String sql = "INSERT INTO time (idTime, nome, saldoGols, golsSofridos, pontos, grupo_idGrupo, eliminatorias, fase) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
         try (Connection c = ConectorBD.obtemConexao();
              PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setInt(1, time.getId());
@@ -186,8 +186,7 @@ public class DAO {
                 int grupo = rs.getInt("grupo_idGrupo");
                 int eliminatorias = rs.getInt("eliminatorias");
                 int fase = rs.getInt("fase");
-                int chave = rs.getInt("chave");
-                times[cont++] = new Time(id, nome, saldoGols, golsSofridos, pontos, grupo, eliminatorias, fase, chave);
+                times[cont++] = new Time(id, nome, saldoGols, golsSofridos, pontos, grupo, eliminatorias, fase);
             }
             return times;
         }
@@ -338,15 +337,6 @@ public class DAO {
         try (Connection c = ConectorBD.obtemConexao();
              PreparedStatement ps = c.prepareStatement(sql)) {
             ps.setString(1, nome);
-            ps.execute();
-        }
-    }
-    public void atualizaChave(String nome, int chave) throws Exception{
-        String sql = "UPDATE time SET chave = ? WHERE nome = ?";
-        try (Connection c = ConectorBD.obtemConexao();
-             PreparedStatement ps = c.prepareStatement(sql)) {
-            ps.setInt(1, chave);
-            ps.setString(2, nome);
             ps.execute();
         }
     }

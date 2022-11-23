@@ -39,6 +39,11 @@ public class TelaUser extends javax.swing.JFrame {
 
         verEliminatoriasButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         verEliminatoriasButton.setText("Ver Eliminatórias");
+        verEliminatoriasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verEliminatoriasButtonActionPerformed(evt);
+            }
+        });
 
         verTimesButton.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         verTimesButton.setText("Ver Times");
@@ -116,8 +121,36 @@ public class TelaUser extends javax.swing.JFrame {
     }//GEN-LAST:event_verTimesButtonActionPerformed
 
     private void verGruposButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verGruposButtonActionPerformed
-        // TODO add your handling code here:
+        DAO dao = new DAO();
+        try{
+        Time[] times = dao.getTimes();
+            if (times.length == 0) {
+                JOptionPane.showMessageDialog(null, "Não há grupos cadastrados.");
+            } else {
+                TelaGruposUser tg = new TelaGruposUser();
+                tg.setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_verGruposButtonActionPerformed
+
+    private void verEliminatoriasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verEliminatoriasButtonActionPerformed
+        DAO dao = new DAO();
+        try{
+            Partida[] p = dao.getPartidas();
+            if (p.length < 48) {
+                JOptionPane.showMessageDialog(null, "Fase de eliminatórias ainda não iniciada pelo administrador.");
+            } else {
+                TelaBracketsUser tbu = new TelaBracketsUser();
+                tbu.setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_verEliminatoriasButtonActionPerformed
 
     /**
      * @param args the command line arguments

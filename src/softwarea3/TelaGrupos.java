@@ -711,7 +711,6 @@ public class TelaGrupos extends javax.swing.JFrame {
                     top2[1] = pontos[i];
                 }
             }
-            System.out.println(top2[0] + " " + top2[1]);
             int contador1 = 0;
             int contador2 = 0;
             int contador3 = 0;
@@ -752,7 +751,6 @@ public class TelaGrupos extends javax.swing.JFrame {
             for (int i = 0; i < 4; i++) {
                 if (grupo[i].getEliminatorias() == 1) {
                     dao.defineEliminatorias(grupo[i].getId());
-                    
                 }
             } 
         } catch (Exception e) {

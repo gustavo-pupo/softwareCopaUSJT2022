@@ -1,6 +1,6 @@
 package softwarea3;
 
-public class Time implements Comparable<Time>{
+public class Time {
     private int id;
     private String nome;
     private int saldoGols;
@@ -9,12 +9,6 @@ public class Time implements Comparable<Time>{
     private int idGrupo;
     private int eliminatorias;
     private int fase;
-    private int chave;
-    
-    @Override
-    public int compareTo(Time o) {
-        return ((Integer)this.chave).compareTo(o.chave);
-    }
     
     public Time(int id, String nome, int saldoGols, int golsSofridos, int pontos, int idGrupo, int eliminatorias) {
         this.id = id;
@@ -35,15 +29,6 @@ public class Time implements Comparable<Time>{
         this.idGrupo = idGrupo;
         this.eliminatorias = eliminatorias;
         this.fase = fase;
-        this.chave = chave;
-    }
-
-    public int getChave() {
-        return chave;
-    }
-
-    public void setChave(int chave) {
-        this.chave = chave;
     }
     
     public int getFase() {
