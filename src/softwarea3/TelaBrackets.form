@@ -8,7 +8,7 @@
       <Color id="Default Cursor"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1350, 600]"/>
+      <Dimension value="[1310, 1310]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1300, 600]"/>
@@ -123,21 +123,15 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="2" pref="38" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="simularOitavas3" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="simularOitavas1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="simularOitavas2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="simularOitavas1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="simularOitavas2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -161,16 +155,24 @@
                               <Component id="time1Oitava3ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="time2Oitava3ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="time1Oitava4ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time1Oitava4ResultTextField1" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time2Oitava4ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="simularOivavas4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="simularOitavas3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
-                  <Component id="simularOivavas4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -221,7 +223,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time2Oitavas4TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time1Oitava4ResultTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time2Oitava4ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="simularOivavas4" min="-2" max="-2" attributes="0"/>
@@ -302,11 +304,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Simular"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="simularOitavas3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Simular"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simularOitavas2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="simularOivavas4">
           <Properties>
@@ -351,10 +351,18 @@
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time1Oitava4ResultTextField1">
+        <Component class="javax.swing.JTextField" name="time2Oitava4ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="simularOitavas3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Simular"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simularOitavas3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -633,10 +641,10 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="time1Quarta1ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time2Quarta1ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time1Quarta2ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time2Quarta2ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time1Quartas1ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time2Quartas1ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time1Quartas2ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time2Quartas2ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -655,24 +663,24 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time1Quartas1TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time1Quarta1ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time1Quartas1ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time2Quartas1TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time2Quarta1ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time2Quartas1ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="simularQuartas1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time1Quartas2TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time1Quarta2ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time1Quartas2ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time2Quartas2TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time2Quarta2ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time2Quartas2ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="simularQuartas2" min="-2" max="-2" attributes="0"/>
@@ -714,28 +722,34 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Simular"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simularQuartas2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="simularQuartas1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Simular"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simularQuartas1ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="time1Quarta1ResultTextField">
+        <Component class="javax.swing.JTextField" name="time1Quartas1ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time2Quarta1ResultTextField">
+        <Component class="javax.swing.JTextField" name="time2Quartas1ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time1Quarta2ResultTextField">
+        <Component class="javax.swing.JTextField" name="time1Quartas2ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time2Quarta2ResultTextField">
+        <Component class="javax.swing.JTextField" name="time2Quartas2ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
@@ -774,10 +788,10 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="time1Quarta3ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time2Quarta3ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time1Quarta4ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="time2Quarta4ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time1Quartas3ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time2Quartas3ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time1Quartas4ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="time2Quartas4ResultTextField" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -796,24 +810,24 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time1Quartas3TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time1Quarta3ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time1Quartas3ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time2Quartas3TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time2Quarta3ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time2Quartas3ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="simularQuartas3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time1Quartas4TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time1Quarta4ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time1Quartas4ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="time2Quartas4TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="time2Quarta4ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="time2Quartas4ResultTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="simularQuartas4" min="-2" max="-2" attributes="0"/>
@@ -855,28 +869,34 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Simular"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simularQuartas3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="simularQuartas4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Simular"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="simularQuartas4ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="time1Quarta3ResultTextField">
+        <Component class="javax.swing.JTextField" name="time1Quartas3ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time2Quarta3ResultTextField">
+        <Component class="javax.swing.JTextField" name="time2Quartas3ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time1Quarta4ResultTextField">
+        <Component class="javax.swing.JTextField" name="time1Quartas4ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="time2Quarta4ResultTextField">
+        <Component class="javax.swing.JTextField" name="time2Quartas4ResultTextField">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>

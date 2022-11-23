@@ -14,12 +14,29 @@ public class Partida {
     private int away;
     private int scoreHost;
     private int scoreAway;
+    private int fase;
 
     public Partida(int host, int away, int scoreHost, int scoreAway) {
         this.host = host;
         this.away = away;
         this.scoreHost = scoreHost;
         this.scoreAway = scoreAway;
+    }
+
+    public Partida(int host, int away, int scoreHost, int scoreAway, int fase) {
+        this.host = host;
+        this.away = away;
+        this.scoreHost = scoreHost;
+        this.scoreAway = scoreAway;
+        this.fase = fase;
+    }
+    
+    public int getFase() {
+        return fase;
+    }
+
+    public void setFase(int fase) {
+        this.fase = fase;
     }
     
     public int getId() {
