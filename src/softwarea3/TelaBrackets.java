@@ -151,9 +151,9 @@ public class TelaBrackets extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Brackets");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1310, 1310));
-        setMinimumSize(new java.awt.Dimension(1300, 600));
-        setPreferredSize(new java.awt.Dimension(1310, 600));
+        setMaximumSize(new java.awt.Dimension(1320, 600));
+        setMinimumSize(new java.awt.Dimension(1320, 600));
+        setPreferredSize(new java.awt.Dimension(1320, 600));
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("OITAVAS"));
